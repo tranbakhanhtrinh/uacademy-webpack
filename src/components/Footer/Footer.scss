@@ -1,0 +1,21 @@
+@import '../../general_scss/general.scss';
+
+footer{
+    padding: 3rem 0 3rem;
+    .list_social{
+        padding-left: 0;
+        list-style-type: none;
+        text-align: center;
+        li{
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+    }
+    p{
+        font-family: $font_Regular;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 0;
+    }
+}

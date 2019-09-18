@@ -1,0 +1,29 @@
+.horizontal_menu{
+    position: fixed;
+    top: 65.59px;
+    overflow: auto;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+    z-index: 99;
+    .navbar-nav{
+        flex-direction: row;
+        .nav-item{
+            .nav-link{
+                white-space: nowrap;
+                font-size: 0.9rem;
+                padding: .5rem 1rem;
+                color: #000000;
+                &.active{
+                    color: #2ac5b0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575.98px){
+    .horizontal_menu{
+        display: block;
+    }
+}

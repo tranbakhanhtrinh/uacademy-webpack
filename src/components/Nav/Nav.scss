@@ -1,0 +1,135 @@
+@import '../../general_scss/general.scss';
+
+.navbar-light{
+    background-color:transparent;
+    width: 100%;
+    z-index: 999;
+    padding: 0;
+    .navbar-brand{
+        // padding: 0;
+        figure{
+            margin-bottom: 0;
+            width: 80%;
+        }
+    }  
+    .navbar-collapse{
+        .navbar-nav{
+            .nav-item{
+                .nav-link {
+                    font-family: $font_SemiBold;
+                    padding: 1rem;
+                    font-size: 0.9rem;
+                    color: #000000;
+                    &.active,
+                    &:active,
+                    &:hover{
+                        color: #2ac5b0;
+                    }
+                }
+            }
+        }
+        .sodt{
+            background: linear-gradient(to right, #2ac5b2 0%, #27bee0 100%);
+            @include border-radius(100px);
+            padding: 3px 10px;
+            font-family: $font_SemiBold;
+            color: #fff;
+            a,a:hover{
+                text-decoration: none;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        button{
+            &.btn{
+                background-color: transparent;
+                figure{
+                    margin-bottom: 0;
+                    width: 75%;
+                }
+                &.dropdown-toggle{
+                    &::after{
+                        content: none;
+                    }
+                }
+                &:visited,&:focus{
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+        }
+        .dropdown-menu{
+            float: none;
+            right: 0;
+            left: auto;
+            padding: 0;
+        }
+    }
+    .goidt{
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+    }
+}
+
+@media (max-width: 575.98px){
+    .navbar-light{
+        background-color: #fff;
+        // height: 65px;
+        padding: .8rem 0;
+        .navbar-brand{
+            margin-right: auto;
+            margin-left: auto;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            width: 35%;
+            padding: 0;        
+            figure{
+                width: 100%;
+            }
+        }
+        .navbar-toggler{
+            border-color: transparent;
+        }
+        .phone_serch_mb{
+            .sodt{
+                padding: 0 10px;
+                a,a:hover{
+                    color: #000000;
+                    text-decoration: none;
+                }
+                a{
+                    .fa-phone{
+                        width: 22.19px;
+                        height: 22.19px;
+                        color: #29c3bf;
+                    }
+                }
+            }
+            .btn{
+                background: none;
+                padding: 0;
+                &.dropdown-toggle{
+                    &::after{
+                        content: none;
+                    }
+                }
+                figure{
+                    margin-bottom: 0;
+                    width: 100%;
+                    img{
+                        width: 60%
+                    }
+                }
+            }
+            .dropdown-menu{
+                float: none;
+                right: 0;
+                left: auto;
+                padding: 0;
+            }
+        }
+    }
+}

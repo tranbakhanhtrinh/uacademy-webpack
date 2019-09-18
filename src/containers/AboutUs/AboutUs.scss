@@ -1,0 +1,175 @@
+@import '../../general_scss/general.scss';
+
+body{
+    // @include background(url("../assets/images/bg.png"),no-repeat, cover, center);
+    background-image:url("../../assets/images/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.aboutus{
+    @include transition(zoom_text .5s ease-in);
+}
+header{
+    padding: 9rem 0 3rem;
+    .title{
+        @include title($font_Bold, initial, 3rem, left, #000000);
+    }
+    p{
+        font-family: $font_Regular;
+        color: #000000;
+    }
+    .header_form{
+        margin-top: 2rem;
+        width: 90%;
+        p{
+            @include title($font_Bold, uppercase, 1.1rem, left, #2ac5b0);
+            margin-bottom: 0;
+        }
+    }
+}
+
+#class_img{
+    padding: 3rem 0;
+    .title{
+        @include title($font_Bold, initial, 3rem, right, #000000);
+    }
+    p{
+        font-family: $font_Regular;
+        color: #000000;
+        text-align: right;
+    }
+    .swiper-container{
+        .swiper-wrapper{
+            .swiper-slide{
+                figure{
+                    img{
+                        @include border-radius(20px);
+                    }
+                }
+            }
+        }
+        .swiper-button-next,
+        .swiper-button-prev{
+            background-color: #fff;
+            margin-top: 0;
+            background-size: 18px 16px;
+            width: 18px;
+            height: 16px;
+            opacity: 1;
+            padding: 15px;
+            top: auto;
+            bottom: 1px;
+        }
+        .swiper-button-next{
+            background-image:url("../../assets/images/arrow_r.png");
+            margin-left: 7.5px;
+            right: 4px;
+        }
+        .swiper-button-prev{
+            background-image:url("../../assets/images/arrow_l.png");
+            margin-right: 7.5px;
+            right: 26px;
+            left: auto;
+        }
+    }
+}
+.swiper-container{
+    .swiper-wrapper{
+        .swiper-slide{
+            figure{
+                margin-bottom: 0;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .arrow{
+        position: absolute;
+        bottom: 0px;
+        right: 5px;
+        padding: 6px 15px;
+        @include border-radius(5px);
+        z-index: 99;
+        background-color: #fff;
+        display: flex;
+        
+        hr{
+            background-color: #e1e1e2;
+            border-right: #e1e1e2;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 1px;
+            height: 15px;
+        }
+    }
+}
+
+#giangvien{
+    padding: 3rem 0 6rem;
+    .title{
+        @include title($font_Bold, initial, 3rem, left, #000000);
+    }
+    p{
+        font-family: $font_Regular;
+        color: #000000;
+        text-align: left;
+    }
+    .bg_gv{
+        background: linear-gradient(to bottom right, #29c4ba 0%, #27bee1 100%);
+        padding: 1rem .5rem;
+        @include border-radius(30px);
+        margin: 1.5rem 0;
+        -webkit-box-shadow: 0px 0px 100px -41px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 100px -41px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 100px -41px rgba(0,0,0,0.75);
+        text-align: center;
+        .gv_name{
+            font-family: $font_Bold;
+            color: #fff;
+            text-align: center;
+        }
+        .position{
+            font-family: $font_Regular;
+            color: #bfecf3;
+            text-align: center;
+        }
+        
+    }
+    .btn_register{
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+.xemthem{
+    color: #bfecf3;
+    font-size: .8rem;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+@media(max-width: 575.98px){
+    #giangvien{
+        .title{
+            font-size: 2rem;
+        }
+        .bg_gv{
+            margin-bottom: 0;
+            // &:nth-child(odd){
+            //     margin-bottom: 0;
+            // }
+            // + .bg_gv{
+            //     margin-bottom: 0;
+            // }
+            -webkit-box-shadow:none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+        .btn_tuvan{
+            margin: 2rem auto;
+        }
+    }
+}
+
+
