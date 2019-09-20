@@ -5,7 +5,8 @@ import Nav from './components/Nav/Nav';
 import HorizontalNav from './components/Nav/HorizontalNav/HorizontalNav';
 import Footer from './components/Footer/Footer';
 import AboutUs from './containers/AboutUs/AboutUs';
-import Course from './containers/Course/Course';
+import Courses from './containers/Courses/Courses';
+import Course from './containers/Courses/Course/Course';
 import Blog from './containers/Blog/Blog';
 import Student from './containers/Student/Student';
 import Document from './containers/Document/Document';
@@ -44,11 +45,12 @@ class App extends Component {
         <HorizontalNav />
         <Switch>
           <Route path="/" exact component={AboutUs}/>
-          <Route path="/course" component={Course}/>
+          <Route path="/courses" component={Courses}/>
           <Route path="/blog" component={Blog}/>
           <Route path="/student" component={Student}/>
           <Route path="/document" component={Document}/>
           <Route path="/contact" component={Contact}/>
+          <Route path="/:courseName" component={Course}/>
         </Switch>
         <Footer />
         <BackToTop clicked={() => this.backToTopHandler(600)}/>

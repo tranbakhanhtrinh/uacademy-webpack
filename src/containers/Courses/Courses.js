@@ -1,12 +1,38 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Button from '../../components/UI/Button/Button';
 
-import './Course.scss';
+import './Courses.scss';
 
-class Course extends Component {
+class Courses extends Component {
+    state = {
+        course: null
+    }
     componentDidMount() {
         console.log(this.props);
+        let course_name = ""; 
+        let course_name_params = "" 
+        const btn_tuvan = document.querySelectorAll('.btn_tuvan')
+        const kh_popup = document.querySelector('#khoahoc_popup');
+        const khoahoc = document.querySelectorAll('.khoahoc');
+        const level_title = document.querySelectorAll('.level_title');
+        btn_tuvan.forEach((e,index) => {
+            btn_tuvan[index].addEventListener('click', () => {
+                var value = kh_popup.options[index + 1].value;
+                
+            },false)
+        })
+        khoahoc.forEach((e,index) => {
+            khoahoc[index].addEventListener('click', () => {
+                course_name = level_title[index].innerHTML.trim();
+                course_name_params = course_name.toLowerCase().split(" ");
+                course_name_params = course_name_params.join("-");
+                localStorage.setItem("courseName",course_name);
+                this.setState({course:course_name_params});
+                // console.log(level_title[index].innerHTML.trim());
+            },false)
+        })
     }
     render(){
         return(
@@ -25,7 +51,7 @@ class Course extends Component {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="khoahoc">
-                                <a href="course_detail.html" className="link_to_details">
+                                <Link to={`/${this.state.course}`}>
                                     <figure>
                                         <img src="images/level_img1.png" alt="" className="img-fluid mx-auto d-block" />
                                     </figure>
@@ -46,13 +72,13 @@ class Course extends Component {
                                         <li>Lorem ipsum dolor sit amet, consectetuer dolor </li>
                                         <li>Lorem ipsum dolor sit amet</li>
                                     </ul>
-                                </a>
+                                </Link>
                                 <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">NHẬN TƯ VẤN</Button>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="khoahoc">
-                                <a href="course_detail.html" className="link_to_details">
+                                <Link to={`/${this.state.course}`}>
                                     <figure>
                                         <img src="images/level_img1.png" alt="" className="img-fluid mx-auto d-block" />
                                     </figure>
@@ -73,13 +99,13 @@ class Course extends Component {
                                         <li>Lorem ipsum dolor sit amet, consectetuer dolor </li>
                                         <li>Lorem ipsum dolor sit amet</li>
                                     </ul>
-                                </a>
+                                </Link>
                                 <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">NHẬN TƯ VẤN</Button>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="khoahoc">
-                                <a href="course_detail.html" className="link_to_details">
+                                <Link to={`/${this.state.course}`}>
                                     <figure>
                                         <img src="images/level_img1.png" alt="" className="img-fluid mx-auto d-block" />
                                     </figure>
@@ -100,7 +126,7 @@ class Course extends Component {
                                         <li>Lorem ipsum dolor sit amet, consectetuer dolor </li>
                                         <li>Lorem ipsum dolor sit amet</li>
                                     </ul>
-                                </a>
+                                </Link>
                                 <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">NHẬN TƯ VẤN</Button>
                             </div>
                         </div>
@@ -111,4 +137,4 @@ class Course extends Component {
     }
 }
 
-export default Course;
+export default Courses;

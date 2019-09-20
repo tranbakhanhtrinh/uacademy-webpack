@@ -353,29 +353,29 @@ class AboutUs extends Component {
                     </div>
                 </section>
                 {/* Modal Giảng Viên */}
-                <div class="modal fade" id="gv_hung">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <figure class="close_pop bob">
-                                    <img src="images/arrow_up.png" alt="" class="img-fluid mx-auto d-block" />
+                <div className="modal fade" id="gv_hung">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                <figure className="close_pop bob">
+                                    <img src="images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-5 col-12 gv_left_img">
-                                        <span class="helper"></span>
-                                        <img src="images/quochung.png" alt="" class="img-fluid d-none  d-sm-none d-md-block" />
-                                        <img src="images/quochung-mb.png" alt="" class="img-fluid d-block d-sm-block d-md-none" />
+                            <div className="modal-body">
+                                <div className="row">
+                                    <div className="col-md-5 col-sm-5 col-12 gv_left_img">
+                                        <span className="helper"></span>
+                                        <img src="images/quochung.png" alt="" className="img-fluid d-none  d-sm-none d-md-block" />
+                                        <img src="images/quochung-mb.png" alt="" className="img-fluid d-block d-sm-block d-md-none" />
                                     </div>
-                                    <div class="col-md-7 col-sm-7 col-12 gv_right_content">
-                                        <div class="content">
-                                            <p class="title_name">MR <span>QUỐC HƯNG (HUGH)</span></p>
-                                            <div class="hr_modal_gv"></div>
-                                            <p class="position">HEAD OF MARCOM</p>
-                                            <p class="company">at Ureka Media</p>
-                                            <p class="description_gv">
+                                    <div className="col-md-7 col-sm-7 col-12 gv_right_content">
+                                        <div className="content">
+                                            <p className="title_name">MR <span>QUỐC HƯNG (HUGH)</span></p>
+                                            <div className="hr_modal_gv"></div>
+                                            <p className="position">HEAD OF MARCOM</p>
+                                            <p className="company">at Ureka Media</p>
+                                            <p className="description_gv">
                                                 Phụ trách hoạt động marketing, internal communication & external communication cho Ureka Media. Anh tham gia ngành Truyền thông Quảng cáo 
                                                 từ năm 2008 tại agency, đã có cơ hội làm việc với các nhãn hàng như: Dutch Lady, Bia 333 chai - Beer Saigon, Nagaworld Resort Cambodia, 
                                                 Resort World Sentosa, VinPearl Land, OPV, ... Bắt đầu tiếp cận tiếp thị trực tuyến từ 2012 và làm việc tại Ureka Media từ 2015, 
@@ -390,29 +390,29 @@ class AboutUs extends Component {
                     </div>
                 </div>
 
-                <div class="modal fade" id="gv_trong">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <figure class="close_pop bob">
-                                    <img src="images/arrow_up.png" alt="" class="img-fluid mx-auto d-block" />
+                <div className="modal fade" id="gv_trong">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                <figure className="close_pop bob">
+                                    <img src="images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-5 col-12 gv_left_img">
-                                        <span class="helper"></span>
-                                        <img src="images/Trong.png" alt="" class="img-fluid d-none  d-sm-none d-md-block" />
-                                        <img src="images/trong-mb.png" alt="" class="img-fluid d-block d-sm-block d-md-none" />
+                            <div className="modal-body">
+                                <div className="row">
+                                    <div className="col-md-5 col-sm-5 col-12 gv_left_img">
+                                        <span className="helper"></span>
+                                        <img src="images/Trong.png" alt="" className="img-fluid d-none  d-sm-none d-md-block" />
+                                        <img src="images/trong-mb.png" alt="" className="img-fluid d-block d-sm-block d-md-none" />
                                     </div>
-                                    <div class="col-md-7 col-sm-7 col-12 gv_right_content">
-                                        <div class="content">
-                                            <p class="title_name">MR <span>NGUYỄN BÁ TRỌNG</span></p>
-                                            <div class="hr_modal_gv"></div>
-                                            <p class="position">MANAGER OF MEDIA</p>
-                                            <p class="company">at Ureka Media</p>
-                                            <p class="description_gv">
+                                    <div className="col-md-7 col-sm-7 col-12 gv_right_content">
+                                        <div className="content">
+                                            <p className="title_name">MR <span>NGUYỄN BÁ TRỌNG</span></p>
+                                            <div className="hr_modal_gv"></div>
+                                            <p className="position">MANAGER OF MEDIA</p>
+                                            <p className="company">at Ureka Media</p>
+                                            <p className="description_gv">
                                                 Tốt nghiệp cử nhân Kinh tế Đối ngoại Đại học Ngoại Thương, bắt đầu tham gia lĩnh vực Digital Marketing từ 2012, Trọng Nguyễn có hơn 6 năm kinh nghiệm làm việc tại Agency, Client, Publishers và Startup. Anh đã tham gia tư vấn và thực thi chiến lược marketing trên nền tảng kỹ thuật số cho nhiều nhãn hàng như BIDV, Gamuda Land, Techcombank, Mercedes Benz, Grab... Hiện anh đang làm việc tại Ureka Media với vị trí Manager of Media Innovation.
                                             </p>
                                         </div>
@@ -424,25 +424,25 @@ class AboutUs extends Component {
                 </div>
 
                 {/* Modal form nhận tư vấn */}
-                <div class="modal fade" id="form_tuvan">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <figure class="close_pop bob">
-                                <img src="images/arrow_up.png" alt="" class="img-fluid mx-auto d-block" />
+                <div className="modal fade" id="form_tuvan">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                <figure className="close_pop bob">
+                                <img src="images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="header_form">
-                                            <div class="d-flex align-items-center">
+                            <div className="modal-body">
+                                <div className="row">
+                                    <div className="col-12">
+                                        <div className="header_form">
+                                            <div className="d-flex align-items-center">
                                                 <p>
                                                     Nhận tư vấn khóa học miễn phí
                                                 </p>
-                                                <figure class="mr-0 ml-auto">
-                                                    <img src="images/may_bay_giay.png" alt="" class="img-fluid mx-auto d-block" />
+                                                <figure className="mr-0 ml-auto">
+                                                    <img src="images/may_bay_giay.png" alt="" className="img-fluid mx-auto d-block" />
                                                 </figure>
                                             </div>
                                             {registerForm}
@@ -455,24 +455,24 @@ class AboutUs extends Component {
                 </div>
 
                 {/* Modal gọi dt */}
-                <div class="modal fade" id="call_confirmation">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <figure class="close_pop bob">
-                                    <img src="images/arrow_up.png" alt="" class="img-fluid mx-auto d-block" />
+                <div className="modal fade" id="call_confirmation">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                <figure className="close_pop bob">
+                                    <img src="images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 BẠN CÓ MUỐN THỰC HIỆN CUỘC GỌI ?
                             </div>
-                            <div class="modal-footer">
+                            <div className="modal-footer">
                                 <a href="tel:+84899971919"> 
-                                    <img src="images/phone_popup.png" alt="" class="img-fluid mx-auto"  width="50" />
+                                    <img src="images/phone_popup.png" alt="" className="img-fluid mx-auto"  width="50" />
                                 </a>
                                 <button data-dismiss="modal">
-                                    <img src="images/close_popup.png" alt="" class="img-fluid mx-auto" width="50" />
+                                    <img src="images/close_popup.png" alt="" className="img-fluid mx-auto" width="50" />
                                 </button>
                             </div>
                         </div>
