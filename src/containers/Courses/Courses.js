@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Button from '../../components/UI/Button/Button';
+import * as actionTypes from '../../store/actions';
 
 import './Courses.scss';
 
@@ -10,7 +12,7 @@ class Courses extends Component {
         course: null
     }
     componentDidMount() {
-        console.log(this.props);
+        // this.props.onGetCourseName();
         let course_name = ""; 
         let course_name_params = "" 
         const btn_tuvan = document.querySelectorAll('.btn_tuvan')
@@ -30,6 +32,8 @@ class Courses extends Component {
                 course_name_params = course_name_params.join("-");
                 localStorage.setItem("courseName",course_name);
                 this.setState({course:course_name_params});
+                this.props.onGetCourseName(course_name);
+                console.log(this.props.courseName);
                 // console.log(level_title[index].innerHTML.trim());
             },false)
         })
@@ -137,4 +141,18 @@ class Courses extends Component {
     }
 }
 
-export default Courses;
+const mapStateToProps = state => {
+    return {
+        courseName: state.courseName.course
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return{
+        onGetCourseName: (course) => dispatch(actionTypes.getCourseName(course))
+    }
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Courses);

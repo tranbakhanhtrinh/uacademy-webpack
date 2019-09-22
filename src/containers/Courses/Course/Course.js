@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import './Course.scss';
 
-export default class Course extends Component {
+class Course extends Component {
+    componentDidMount(){
+        const level_title = document.querySelector('.level_title');
+        level_title.innerHTML = this.props.courseName;
+    }
     render(){
         return(
             <section id="course_detail">
@@ -247,3 +252,11 @@ export default class Course extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        courseName: state.courseName.course
+    }
+}
+
+export default connect(mapStateToProps)(Course);

@@ -1,0 +1,3 @@
+export {
+    getCourseName
+} from './courses';
