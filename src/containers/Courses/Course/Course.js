@@ -7,6 +7,9 @@ class Course extends Component {
     componentDidMount(){
         const level_title = document.querySelector('.level_title');
         level_title.innerHTML = this.props.courseName;
+        window.addEventListener('scroll',() => {
+            window.scrollY = 0 
+        })
     }
     render(){
         return(

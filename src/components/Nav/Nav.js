@@ -11,17 +11,6 @@ import './Nav.scss';
 
 
 const nav = () => {
-  window.onload = () => {
-    window.onscroll = () => {
-      if(window.outerWidth > 768){
-        if(window.scrollY > 20){
-          document.querySelector('.navbar-light').style.backgroundColor = "#fff";
-        }
-        else document.querySelector('.navbar-light').style.backgroundColor = "transparent";
-      }
-    }
-  }
-
   return(
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
       <div className="container">

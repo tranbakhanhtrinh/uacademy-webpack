@@ -106,10 +106,10 @@ class Contact extends Component {
                         
                             <div className="tab-content">
                                 <div role="tabpanel" className="tab-pane active" id="truso">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.075076618188!2d106.72728141511453!3d10.805561892301748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528af26108571%3A0xd9a0159a5b320ab1!2sUreka+Media!5e0!3m2!1svi!2s!4v1564644646998!5m2!1svi!2s" frameborder="0" style={{border:0}} allowfullscreen title="truso"></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.075076618188!2d106.72728141511453!3d10.805561892301748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528af26108571%3A0xd9a0159a5b320ab1!2sUreka+Media!5e0!3m2!1svi!2s!4v1564644646998!5m2!1svi!2s" frameBorder="0" style={{border:0}} allowFullScreen title="truso"></iframe>
                                 </div>
                                 <div role="tabpanel" className="tab-pane fade" id="cs2">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1939283565016!2d106.68991451511441!3d10.796454192307923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528ceecbe36cd%3A0xd94049a33a449701!2zMzlsIMSQxrDhu51uZyBNaeG6v3UgTuG7lWksIFBoxrDhu51uZyA3LCBCw6xuaCBUaOG6oW5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1564644682095!5m2!1svi!2s" frameborder="0" style={{border:0}} allowfullscreen title="cs2"></iframe> 
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1939283565016!2d106.68991451511441!3d10.796454192307923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528ceecbe36cd%3A0xd94049a33a449701!2zMzlsIMSQxrDhu51uZyBNaeG6v3UgTuG7lWksIFBoxrDhu51uZyA3LCBCw6xuaCBUaOG6oW5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1564644682095!5m2!1svi!2s" frameBorder="0" style={{border:0}} allowFullScreen title="cs2"></iframe> 
                                 </div>
                             </div>
                         </div>

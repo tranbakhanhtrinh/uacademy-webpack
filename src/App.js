@@ -15,7 +15,6 @@ import BackToTop from './components/BackToTop/BackToTop';
 import './App.css';
 
 class App extends Component {
-
   backToTopHandler = (scrollDuration) => {
     // const scrollStep = -window.scrollY / (scrollDuration / 15),
     //     scrollInterval = setInterval(function(){
@@ -39,6 +38,15 @@ class App extends Component {
   }
 
   render(){
+    window.addEventListener('scroll',() => {
+        if(window.outerWidth > 768){
+          if(window.scrollY > 20){
+            document.querySelector('.navbar-light').style.backgroundColor = "#fff";
+          }
+          else document.querySelector('.navbar-light').style.backgroundColor = "transparent";
+        }
+    })
+    
     return (
       <div className="App">
         <Nav />

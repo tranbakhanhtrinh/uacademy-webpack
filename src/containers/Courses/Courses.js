@@ -12,10 +12,9 @@ class Courses extends Component {
         course: null
     }
     componentDidMount() {
-        // this.props.onGetCourseName();
         let course_name = ""; 
-        let course_name_params = "" 
-        const btn_tuvan = document.querySelectorAll('.btn_tuvan')
+        let course_name_params = "" ;
+        const btn_tuvan = document.querySelectorAll('.btn_tuvan');
         const kh_popup = document.querySelector('#khoahoc_popup');
         const khoahoc = document.querySelectorAll('.khoahoc');
         const level_title = document.querySelectorAll('.level_title');
@@ -30,11 +29,8 @@ class Courses extends Component {
                 course_name = level_title[index].innerHTML.trim();
                 course_name_params = course_name.toLowerCase().split(" ");
                 course_name_params = course_name_params.join("-");
-                localStorage.setItem("courseName",course_name);
                 this.setState({course:course_name_params});
                 this.props.onGetCourseName(course_name);
-                console.log(this.props.courseName);
-                // console.log(level_title[index].innerHTML.trim());
             },false)
         })
     }
