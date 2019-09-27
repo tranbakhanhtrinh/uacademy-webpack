@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers,applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import courseName from './store/reducers/courses';
+import about_header from './store/reducers/about';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/jquery/dist/jquery';
 import 'popper.js';
@@ -13,10 +15,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
-    courseName: courseName
+    courseName: courseName,
+    about_header: about_header
 })
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,applyMiddleware(thunk));
 
 const app = (
     <Provider store={store}>

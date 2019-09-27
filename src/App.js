@@ -37,16 +37,18 @@ class App extends Component {
     window.requestAnimationFrame(step);
   }
 
-  render(){
+  componentDidMount() {
     window.addEventListener('scroll',() => {
-        if(window.outerWidth > 768){
-          if(window.scrollY > 20){
-            document.querySelector('.navbar-light').style.backgroundColor = "#fff";
-          }
-          else document.querySelector('.navbar-light').style.backgroundColor = "transparent";
+      if(window.outerWidth > 768){
+        if(window.scrollY > 20){
+          document.querySelector('.navbar-light').style.backgroundColor = "#fff";
         }
+        else document.querySelector('.navbar-light').style.backgroundColor = "transparent";
+      }
     })
-    
+  }
+
+  render(){
     return (
       <div className="App">
         <Nav />

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
+import { connect } from "react-redux";
 
 import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import Select from '../../components/UI/Select/Select';
+import * as actionTypes from '../../store/actions'
 
 import './AboutUs.scss';
 
@@ -41,16 +43,7 @@ class AboutUs extends Component {
     }
 
     componentDidMount(){
-        // console.log(this.props)
-        // const style = {
-        //     backgroundImage:"url('images/bg.png')",
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundSize: 'cover',
-        //     backgroundPosition: 'center'
-        // }
-        // document.body.style = style;
-        // console.log(document.body);
-        
+        this.props.onFetchHeader(this.props.header);
     }
 
     inputChangedHandler = (event,inputIdentifier) => {
@@ -103,6 +96,8 @@ class AboutUs extends Component {
             spaceBetween: 30
         }
 
+        const abHeader = {...this.props.header}
+
         return(
             <div className="aboutus">
                 <header id="header">
@@ -110,13 +105,10 @@ class AboutUs extends Component {
                         <div className="row">
                             <div className="col-md-6">
                                 <p className="title">
-                                    Lorem ipsum
+                                    {abHeader.title}
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sedv diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                    {abHeader.des}
                                 </p>
                                 <div className="header_form">
                                     <div className="d-flex align-items-center">
@@ -132,7 +124,7 @@ class AboutUs extends Component {
                             </div>
                             <div className="col-md-6 my-auto">
                                 <figure>
-                                    <img src="images/header_hinh.png" alt="" className="img-fluid mx-auto d-block" />
+                                    <img src={`images/${abHeader.img}`} alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
                         </div>
@@ -483,4 +475,16 @@ class AboutUs extends Component {
     }
 }
 
-export default AboutUs;
+const mapStateToProps = state => {
+    return {
+        header: state.about_header.header
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {    
+        onFetchHeader: (header) => dispatch(actionTypes.fetchHeader(header))
+    }
+}
+ 
+export default connect(mapStateToProps,mapDispatchToProps)(AboutUs);

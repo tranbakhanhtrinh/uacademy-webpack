@@ -12,23 +12,23 @@ class Courses extends Component {
         course: null
     }
     componentDidMount() {
+        console.log(this.props);
         let course_name = ""; 
         let course_name_params = "" ;
         const btn_tuvan = document.querySelectorAll('.btn_tuvan');
-        const kh_popup = document.querySelector('#khoahoc_popup');
+        // const kh_popup = document.querySelector('#khoahoc_popup');
         const khoahoc = document.querySelectorAll('.khoahoc');
         const level_title = document.querySelectorAll('.level_title');
         btn_tuvan.forEach((e,index) => {
             btn_tuvan[index].addEventListener('click', () => {
-                var value = kh_popup.options[index + 1].value;
+                // var value = kh_popup.options[index + 1].value;
                 
             },false)
         })
         khoahoc.forEach((e,index) => {
             khoahoc[index].addEventListener('click', () => {
                 course_name = level_title[index].innerHTML.trim();
-                course_name_params = course_name.toLowerCase().split(" ");
-                course_name_params = course_name_params.join("-");
+                course_name_params = course_name.toLowerCase().split(" ").join("-");
                 this.setState({course:course_name_params});
                 this.props.onGetCourseName(course_name);
             },false)
