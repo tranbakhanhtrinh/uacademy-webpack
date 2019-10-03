@@ -43,7 +43,9 @@ class AboutUs extends Component {
     }
 
     componentDidMount(){
-        this.props.onFetchHeader(this.props.header);
+        // this.props.onFetchHeader(this.props.header);
+        // this.props.onFetchHinhAnhLopHoc(this.props.hinhanhlophoc);
+        this.props.onFetchAbout(this.props.header,this.props.hinhanhlophoc,this.props.giangvien)
     }
 
     inputChangedHandler = (event,inputIdentifier) => {
@@ -93,10 +95,26 @@ class AboutUs extends Component {
                 disableOnInteraction: false,
             },
             loop:true,
-            spaceBetween: 30
+            spaceBetween: 30,
         }
 
-        const abHeader = {...this.props.header}
+        const {abHeader,abHinhAnhLopHoc,abGiangVien} = {
+            abHeader:{...this.props.header},
+            abHinhAnhLopHoc: {...this.props.hinhanhlophoc},
+            abGiangVien: {...this.props.giangvien}
+        }
+
+        const img = Object.values({...abHinhAnhLopHoc.img});
+        const updatedImg = img.map( (a,index) => {
+            return(
+                <div key={index}>
+                    <figure>
+                        <img src={`images/${a}`} alt="" className="img-fluid d-block mx-auto" />
+                    </figure>
+                </div>
+            )
+        })
+
 
         return(
             <div className="aboutus">
@@ -135,45 +153,38 @@ class AboutUs extends Component {
                 <section id="class_img">
                     <div className="container">
                         <div className="row">
-                        <div className="col-12">
-                            <div className="d-block d-sm-none">
-                            <p className="title">
-                                Hình ảnh <span className="break">lớp học</span>
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit 
-                            </p>
+                            <div className="col-12">
+                                <div className="d-block d-sm-none">
+                                    <p className="title">
+                                        {abHinhAnhLopHoc.title}
+                                    </p>
+                                    <p>
+                                        {abHinhAnhLopHoc.des}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-md-7">
-                            <Swiper {...params}>
-                                <div>
-                                    <figure>
-                                        <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
-                                    </figure>
-                                </div>
-                                <div>
-                                    <figure>
-                                        <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
-                                    </figure>
-                                </div>
-                                <div>
-                                    <figure>
-                                        <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
-                                    </figure>
-                                </div>
-                            </Swiper>
-                        </div>
-                        <div className="col-md-5 my-auto">
-                            <div className="d-none d-sm-block">
-                            <p className="title">
-                                Hình ảnh <span className="break">lớp học</span>
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit 
-                            </p>
+                            <div className="col-md-7">
+                                {img.length > 0 ? 
+                                    <Swiper {...params}>
+                                        {/* <div>
+                                            <figure>
+                                                <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
+                                            </figure>
+                                        </div> */}
+                                        {updatedImg}        
+                                    </Swiper> : null
+                                }
                             </div>
-                        </div>
+                            <div className="col-md-5 my-auto">
+                                <div className="d-none d-sm-block">
+                                <p className="title">
+                                    {abHinhAnhLopHoc.title}
+                                </p>
+                                <p>
+                                    {abHinhAnhLopHoc.des}
+                                </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -184,13 +195,10 @@ class AboutUs extends Component {
                         <div className="row">
                             <div className="col-md-6 my-auto">
                                 <p className="title">
-                                    Giảng viên
+                                    {abGiangVien.title}
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sedv diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                    {abGiangVien.des}
                                 </p>
                                 <Button type='button' className="btn_register d-none d-sm-block" data_toggle="modal" data_target="#form_tuvan">Nhận tư vấn</Button>
                             </div>
@@ -477,13 +485,15 @@ class AboutUs extends Component {
 
 const mapStateToProps = state => {
     return {
-        header: state.about_header.header
+        header: state.about.header,
+        hinhanhlophoc: state.about.hinhanhlophoc,
+        giangvien: state.about.giangvien
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {    
-        onFetchHeader: (header) => dispatch(actionTypes.fetchHeader(header))
+        onFetchAbout: (header, hinhanh, gv) => dispatch(actionTypes.fetchAbout(header, hinhanh,gv)),
     }
 }
  

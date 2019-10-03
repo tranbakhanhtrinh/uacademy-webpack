@@ -12,7 +12,8 @@ class Courses extends Component {
         course: null
     }
     componentDidMount() {
-        console.log(this.props);
+        console.log(this.props.courses);
+        this.props.onFetchCourses();
         let course_name = ""; 
         let course_name_params = "" ;
         const btn_tuvan = document.querySelectorAll('.btn_tuvan');
@@ -30,11 +31,18 @@ class Courses extends Component {
                 course_name = level_title[index].innerHTML.trim();
                 course_name_params = course_name.toLowerCase().split(" ").join("-");
                 this.setState({course:course_name_params});
-                this.props.onGetCourseName(course_name);
+                this.props.onFetchCourses();
             },false)
         })
     }
-    render(){
+    render(){ 
+        console.log(this.props.courses)
+        // console.log(typeof(this.props.courses))
+        const arr = [].concat.apply([],this.props.courses);
+        arr.map(a => {
+            console.log(a.courseName);
+        })
+        
         return(
             <section id="course">
                 <div className="container">
@@ -49,7 +57,8 @@ class Courses extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4">
+                        
+                        {/* <div className="col-md-4">
                             <div className="khoahoc">
                                 <Link to={`/${this.state.course}`}>
                                     <figure>
@@ -129,7 +138,7 @@ class Courses extends Component {
                                 </Link>
                                 <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">NHẬN TƯ VẤN</Button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
@@ -139,13 +148,13 @@ class Courses extends Component {
 
 const mapStateToProps = state => {
     return {
-        courseName: state.courseName.course
+        courses: state.courses.courses
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return{
-        onGetCourseName: (course) => dispatch(actionTypes.getCourseName(course))
+        onFetchCourses: () => dispatch(actionTypes.fetchCourses())
     }
 }
 

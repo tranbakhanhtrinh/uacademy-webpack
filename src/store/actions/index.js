@@ -1,6 +1,6 @@
 export {
-    fetchHeader
+    fetchAbout
 } from './about';
 export {
-    getCourseName
+    fetchCourses
 } from './courses';

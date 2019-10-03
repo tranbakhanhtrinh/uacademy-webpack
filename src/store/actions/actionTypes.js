@@ -1,3 +1,3 @@
-export const GET_HEADER = 'GET_HEADER';
+export const GET_ABOUT = 'GET_ABOUT';
 
-export const GET_COURSE_NAME = 'GET_COURSE_NAME';
+export const GET_COURSES = 'GET_COURSES';

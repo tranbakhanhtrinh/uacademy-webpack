@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore, combineReducers,applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import courseName from './store/reducers/courses';
-import about_header from './store/reducers/about';
+import courses from './store/reducers/courses';
+import about from './store/reducers/about';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/jquery/dist/jquery';
 import 'popper.js';
@@ -15,8 +15,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
-    courseName: courseName,
-    about_header: about_header
+    courses: courses,
+    about: about
 })
 
 const store = createStore(rootReducer,applyMiddleware(thunk));

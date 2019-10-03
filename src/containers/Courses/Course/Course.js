@@ -6,7 +6,7 @@ import './Course.scss';
 class Course extends Component {
     componentDidMount(){
         const level_title = document.querySelector('.level_title');
-        level_title.innerHTML = this.props.courseName;
+        level_title.innerHTML = this.props.courses;
         window.addEventListener('scroll',() => {
             window.scrollY = 0 
         })
@@ -258,7 +258,7 @@ class Course extends Component {
 
 const mapStateToProps = state => {
     return {
-        courseName: state.courseName.course
+        courses: state.courses.courses
     }
 }
 
