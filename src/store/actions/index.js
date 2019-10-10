@@ -2,5 +2,6 @@ export {
     fetchAbout
 } from './about';
 export {
-    fetchCourses
+    fetchCourses,
+    fetchCourse
 } from './courses';

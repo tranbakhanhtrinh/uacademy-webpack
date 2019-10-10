@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import * as actionTypes from '../../../store/actions/';
+import Button from '../../../components/UI/Button/Button';
+
 import './Course.scss';
 
 class Course extends Component {
     componentDidMount(){
-        const level_title = document.querySelector('.level_title');
-        level_title.innerHTML = this.props.courses;
-        window.addEventListener('scroll',() => {
-            window.scrollY = 0 
-        })
+        this.loadData();
+    }
+    loadData = () => {
+        if(this.props.match.params.course){
+            this.props.onFetchCourses();
+            this.props.onFetchCourse();
+        }
     }
     render(){
+        const coursesTitle = [].concat.apply([],this.props.courses);
+        const course = [].concat.apply([],this.props.course);
+        let updatedCourseName = null;
+        let updatedCourse = null;
+        coursesTitle.map( t => {  
+            const trimmedCourseName = t.courseName.trim().toLowerCase().split(" ").join("-")
+            if(this.props.match.params.course === trimmedCourseName){
+                return updatedCourseName = (
+                        <p className="level_title">
+                            {t.courseName}
+                        </p>
+                    );
+            }
+            return true;
+        })
+        course.map( c => {
+            
+        })
         return(
-            <section id="course_detail">
+            <section id="course_detail" >
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -25,7 +48,7 @@ class Course extends Component {
                                         </figure>
                                     </div>
                                     <div className="col-md-4 bd_right">
-                                        <p className="level_title"></p>
+                                        {updatedCourseName}
                                         <p>
                                             Ngày khai giảng dự kiến: <br />
                                             Thứ 2, 10/06/2019.<br />
@@ -45,9 +68,9 @@ class Course extends Component {
                                                 6.000.000 VNĐ
                                             </div>
                                         </fieldset>
-                                        <button type="button" className="btn_tuvan" data-toggle="modal" data-target="#form_tuvan">
+                                        <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">
                                             Nhận tư vấn miễn phí ngay
-                                        </button>
+                                        </Button>
                                     </div>
                                 </div>
                                 <hr />
@@ -244,9 +267,9 @@ class Course extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" className="btn_tuvan" data-toggle="modal" data-target="#form_tuvan">
+                                <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">
                                     Nhận tư vấn miễn phí ngay
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -258,8 +281,16 @@ class Course extends Component {
 
 const mapStateToProps = state => {
     return {
-        courses: state.courses.courses
+        courses: state.courses.courses,
+        course: state.courses.course
     }
 }
 
-export default connect(mapStateToProps)(Course);
+const mapDispatchToProps = dispatch => {
+    return{
+        onFetchCourses: () => dispatch(actionTypes.fetchCourses()),
+        onFetchCourse: () => dispatch(actionTypes.fetchCourse())
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Course);

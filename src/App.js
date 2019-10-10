@@ -55,12 +55,12 @@ class App extends Component {
         <HorizontalNav />
         <Switch>
           <Route path="/" exact component={AboutUs}/>
-          <Route path="/courses" component={Courses}/>
+          <Route path="/courses" exact component={Courses}/>
+          <Route path="/courses/:course" exact component={Course}/>
           <Route path="/blog" component={Blog}/>
           <Route path="/student" component={Student}/>
           <Route path="/document" component={Document}/>
           <Route path="/contact" component={Contact}/>
-          <Route path="/:courseName" component={Course}/>
         </Switch>
         <Footer />
         <BackToTop clicked={() => this.backToTopHandler(600)}/>

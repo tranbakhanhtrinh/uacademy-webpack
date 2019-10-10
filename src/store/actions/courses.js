@@ -12,12 +12,23 @@ export const fetchCourses = () => {
     return dispatch => {
         axios.get("/courses.json")
             .then(res => {
-                // const abc = [].concat.apply(res.data);
-                // const courses = abc.map( c => {
-                //     return {...c};
-                // });
-                // console.log(typeof(abc));
                 dispatch(getCourses(res.data))
+            })
+    }
+}
+
+export const getCourse = (course) => {
+    return {
+        type: actionTypes.GET_COURSE,
+        course: course
+    }
+}
+
+export const fetchCourse = () => {
+    return dispatch => {
+        axios.get("/course.json")
+            .then(res => {
+                dispatch(getCourse(res.data))
             })
     }
 }

@@ -52,12 +52,11 @@ body{
                 @include border-radius(50px);
                 .vnd{
                     color: #ff4c00;
-                    font-family: $font_Bold;
                     font-size: 1.2rem;
                 }
             }
         } 
-        ul{
+        .list{
             margin-top: 1rem;
             color: #000;
         }
