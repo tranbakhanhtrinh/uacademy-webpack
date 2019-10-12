@@ -166,11 +166,6 @@ class AboutUs extends Component {
                             <div className="col-md-7">
                                 {img.length > 0 ? 
                                     <Swiper {...params}>
-                                        {/* <div>
-                                            <figure>
-                                                <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
-                                            </figure>
-                                        </div> */}
                                         {updatedImg}        
                                     </Swiper> : null
                                 }

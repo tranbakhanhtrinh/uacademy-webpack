@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Swiper from 'react-id-swiper';
 
 import * as actionTypes from '../../../store/actions/';
 import Button from '../../../components/UI/Button/Button';
@@ -20,52 +21,72 @@ class Course extends Component {
         const coursesTitle = [].concat.apply([],this.props.courses);
         const course = [].concat.apply([],this.props.course);
         let updatedCourseName = null;
-        let updatedCourse = null;
-        coursesTitle.map( t => {  
-            const trimmedCourseName = t.courseName.trim().toLowerCase().split(" ").join("-")
-            if(this.props.match.params.course === trimmedCourseName){
-                return updatedCourseName = (
-                        <p className="level_title">
-                            {t.courseName}
-                        </p>
-                    );
-            }
-            return true;
-        })
-        course.map( c => {
-            
-        })
-        return(
-            <section id="course_detail" >
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
+        const params = {
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop:true,
+            spaceBetween: 30,
+        }
+        // coursesTitle.map( (t,title_index) => {  
+        //     const trimmedCourseName = t.courseName.trim().toLowerCase().split(" ").join("-")
+        //     if(this.props.match.params.course === trimmedCourseName){
+        //         return updatedCourseName = (
+        //                 <p className="level_title">
+        //                     {t.courseName}
+        //                 </p>
+        //             );
+        //     }
+        //     return true;
+        // })
+        course.map( (c,course_index) => {
+            const img = Object.values({...c.hinhanhlophoc});
+            const updatedImg = c.hinhanhlophoc.map( (a,index) => {
+                return(
+                    <div key={index}>
+                        <figure>
+                            <img src={`/images/${a}`} alt="" className="img-fluid d-block mx-auto" />
+                        </figure>
+                    </div>
+                )
+            })
+            coursesTitle.map( (t,title_index) => {  
+                const trimmedCourseName = t.courseName.trim().toLowerCase().split(" ").join("-")
+                if(this.props.match.params.course === trimmedCourseName && course_index === title_index){
+                    return updatedCourseName = (
                             <div className="bd_detail">
                                 <div className="row">
                                     <div className="col-md-3 ">
                                         <figure>
-                                            <img src="images/level_ele.png" alt="" className="img-fluid mx-auto d-block" />
+                                            <img src={`/images/${c.img}`} alt="" className="img-fluid mx-auto d-block" />
                                         </figure>
                                     </div>
                                     <div className="col-md-4 bd_right">
-                                        {updatedCourseName}
+                                        <p className="level_title">
+                                            {t.courseName}
+                                        </p>
                                         <p>
                                             Ngày khai giảng dự kiến: <br />
-                                            Thứ 2, 10/06/2019.<br />
+                                            {c.start_date}<br />
                                             Ngày và giờ học dự kiến:<br />
-                                            (18h30 - 20h30) - Thứ 2, 4, 6<br />
+                                            {c.start_date_studying}<br />
                                             <br />
-                                            <span className="thoiluong">Thời lượng: 13 buổi</span>
+                                            <span className="thoiluong">Thời lượng: {c.duration}</span>
                                         </p>
                                     </div>
                                     <div className="col-md-4">
                                         <fieldset>
                                             <legend>HỌC PHÍ</legend>
                                             <p className="old_price">
-                                                10.000.000 VNĐ
+                                                {c.oldPrice}
                                             </p>
                                             <div className="new_price">
-                                                6.000.000 VNĐ
+                                                {c.newPrice}
                                             </div>
                                         </fieldset>
                                         <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">
@@ -78,12 +99,8 @@ class Course extends Component {
                                     <p className="level_title">
                                         THAM GIA KHÓA HỌC BẠN SẼ:
                                     </p>
-                                    <ul>
-                                        <li>Hiểu về Marketing nói chung và vị trí của Digital trong đó nói riêng.</li>
-                                        <li>Học về mindset trước khi thực hành planning/implementation.</li>
-                                        <li>Lên chiến dịch truyền thông với KPIs phù hợp nhờ việc phân tích brief, brand và thị trường.</li>
-                                        <li>Biết cách vận hành, kiểm soát và tối ưu các kênh (Facebook và Google ads).</li>
-                                        <li>Được hướng dẫn trực tiếp bởi giảng viên từ Ureka Media, kết hợp lý thuyết Marketing và kinh nghiệm làm việc thực tiễn.</li>
+                                    <ul dangerouslySetInnerHTML={{__html: c.advantage}}>
+                                        
                                     </ul>
                                 </div>
                                 <div className="block_content">
@@ -93,62 +110,32 @@ class Course extends Component {
                                     <p className="sub_title">
                                         OVERVIEW
                                     </p>
-                                    <ul>
-                                        <li>Tổng quan và định vị Digital Marketing trong Marketing</li>
-                                        <li>Mindset về Objectives (Business/Marketing/Communication) và Digital KPIs</li>
-                                        <li>Hiểu đúng về Performance trên Digital (Facebook, Google, Ad Networks, etc)</li>
-                                        <li>Thực hành planning trên brief: cách chọn và đề xuất KPIs</li>
+                                    <ul dangerouslySetInnerHTML={{__html: c.content.overview}}>
+                                       
                                     </ul>
                                     <p className="sub_title">PERFORMANCE MEDIA</p>
-                                    <ul>
-                                        <li>Xu hướng Video Content (creative) và thực hành quảng cáo Video trên Facebook, Youtube…</li>
-                                        <li>Quảng cáo hiển thị (Display ads) và thực hành planning, set up quảng cáo Google Ads</li>
-                                        <li>Social Media: Hiểu về nền tảng, sáng tạo nội dung và thực hành quảng cáo Facebook Ads</li>
-                                        <li>Search Marketing: Sân chơi của Google. Thực hành và tối ưu Google Paid Search</li>
+                                    <ul dangerouslySetInnerHTML={{__html: c.content.performance_media}}>
+                                        
                                     </ul>
                                     
                                     <p className="sub_title">ANALYTICS & OPTIMIZATION</p>
-                                    <ul>
-                                        <li>Phân tích dữ liệu với Facebook Audience Insight, Audience Manager</li>
-                                        <li>Thực hành phân tích và tối ưu chiến dịch với Google Analytics, Facebook Pixel…</li>
-                                        <li>Thực hành viết & đọc hiểu báo cáo. Áp dụng Automation</li>
+                                    <ul dangerouslySetInnerHTML={{__html: c.content.analytics_optimization}}>
+                                        
                                     </ul>
                                     <p className="sub_title">CONTENT, MEDIA PLAN & PROPOSAL</p>
-                                    <ul>
-                                        <li>Tiếp thị nội dung và vai trò trong tiếp thị</li>
-                                        <li>UI/UX và tâm lý người dùng khi thiết kế website</li>
-                                        <li>Hướng dẫn làm proposal, thực hành trình bày kế hoạch truyền thông</li>
-                                        <li>Giảng viên đánh giá (feedback) và Hỏi đáp</li>
+                                    <ul dangerouslySetInnerHTML={{__html: c.content.proposal}}>
+                                        
                                     </ul>
                                 </div>
                                 <div className="block_content">
                                     <p className="level_title">
                                         HÌNH ẢNH LỚP HỌC
                                     </p>
-                                    <div className="swiper-container" id="hinhanhlophoc">
-                                        <div className="swiper-wrapper">
-                                            <div className="swiper-slide">
-                                            <figure>
-                                                <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
-                                            </figure>
-                                            </div>
-                                            <div className="swiper-slide">
-                                            <figure>
-                                                <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
-                                            </figure>
-                                            </div>
-                                            <div className="swiper-slide">
-                                            <figure>
-                                                <img src="images/slide1.png" alt="" className="img-fluid d-block mx-auto" />
-                                            </figure>
-                                            </div>
-                                        </div>
-                                        <div className="arrow">
-                                            <div className="swiper-button-prev"></div>
-                                            <hr />
-                                            <div className="swiper-button-next"></div>
-                                        </div>
-                                    </div>
+                                    {img.length > 0 ? 
+                                    <Swiper {...params}>
+                                        {updatedImg}        
+                                    </Swiper> : null
+                                }
                                 </div>
                                 <div className="block_content">
                                     <p className="level_title">
@@ -159,31 +146,30 @@ class Course extends Component {
                                             <div className="row">
                                                 <div className="col-md-4">
                                                     <figure className="uudai_hinh">
-                                                        <img src="images/uudai1.png" alt="" className="img-fluid d-block mx-auto" />
+                                                        <img src={`/images/${c.uudai[0].img}`} alt="" className="img-fluid d-block mx-auto" />
                                                     </figure>                    
                                                     <p className="uudai">
-                                                        <span className="gach">Học phí: 8.000.000 / khóa</span> <br />
-                                                        <span className="bold">Còn: 6,990,000đ/ khoá</span>
+                                                        <span className="gach">Học phí: {c.uudai[0].oldPrice} / khóa</span> <br />
+                                                        <span className="bold">Còn: {c.uudai[0].newPrice}/ khoá</span>
                                                     </p>
                                                 </div>
                                                 <div className="col-md-4">
                                                     <figure className="uudai_hinh">
-                                                        <img src="images/uudai2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                        <img src={`/images/${c.uudai[1].img}`} alt="" className="img-fluid d-block mx-auto" />
                                                     </figure>                    
                                                     <p className="uudai">
-                                                        <span className="bold">Tặng 1.500.000 VND</span> <br />
-                                                        <span className="break">thực hành tại lớp </span>
-                                                        cho mỗi nhóm
+                                                        <span className="bold">{c.uudai[1].bold}</span> <br />
+                                                        <span className="break">{c.uudai[1].txt} </span>
                                                     </p>
                                                 </div>
                                                 <div className="col-md-4">
                                                     <figure className="uudai_hinh">
-                                                        <img src="images/uudai3.png" alt="" className="img-fluid d-block mx-auto" />
+                                                        <img src={`/images/${c.uudai[2].img}`} alt="" className="img-fluid d-block mx-auto" />
                                                     </figure>                    
                                                     <p className="uudai">
-                                                        <span className="bold">Giảm thêm 5%</span> <br />
-                                                        <span className="break">cho nhóm học viên </span>
-                                                        <span className="break">đăng ký từ 3 người</span>
+                                                        <span className="bold">{c.uudai[2].bold}</span> <br />
+                                                        <span className="break">{c.uudai[2].txt}</span>
+                                                        
                                                     </p>
                                                 </div>
                                             </div>
@@ -197,7 +183,7 @@ class Course extends Component {
                                     <div className="gv d-none d-sm-flex">
                                         <div className="bg_gv">
                                             <figure>
-                                                <img src="images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                <img src="/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
                                             </figure>
                                             <p className="gv_name">
                                                 Mr. Trọng Nguyễn
@@ -212,7 +198,7 @@ class Course extends Component {
                                         </div>
                                         <div className="bg_gv">
                                             <figure>
-                                                <img src="images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
+                                                <img src="/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
                                             </figure>
                                             <p className="gv_name">
                                                 Mr. Hưng Võ
@@ -227,50 +213,59 @@ class Course extends Component {
                                         </div>
                                     </div>
                                     <div className="d-block d-sm-none">
-                                        <div className="swiper-container" id="gv_slide">
-                                            <div className="swiper-wrapper">
-                                                <div className="swiper-slide">
+                                        <Swiper {...params}>
+                                                <div>
                                                     <div className="bg_gv">
-                                                    <figure>
-                                                        <img src="images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
-                                                    </figure>
-                                                    <p className="gv_name">
-                                                        Mr. Hưng Võ
-                                                    </p>
-                                                    <p className="position">
-                                                        Head of Marcom at <wbr />
-                                                        Ureka Media
-                                                    </p>
-                                                    <button type="button" className="xemthem" data-toggle="modal" data-target="#gv_hung">
-                                                        <i>Xem thêm >>></i>
-                                                    </button>
+                                                        <figure>
+                                                            <img src="/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
+                                                        </figure>
+                                                        <p className="gv_name">
+                                                            Mr. Hưng Võ
+                                                        </p>
+                                                        <p className="position">
+                                                            Head of Marcom at <wbr />
+                                                            Ureka Media
+                                                        </p>
+                                                        <button type="button" className="xemthem" data-toggle="modal" data-target="#gv_hung">
+                                                            <i>Xem thêm >>></i>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div className="swiper-slide">
+                                                <div>
                                                     <div className="bg_gv">
-                                                    <figure>
-                                                        <img src="images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
-                                                    </figure>
-                                                    <p className="gv_name">
-                                                        Mr. Trọng Nguyễn
-                                                    </p>
-                                                    <p className="position">
-                                                        Media Manager at <wbr />
-                                                        Ureka Media
-                                                    </p>
-                                                    <button type="button" className="xemthem" data-toggle="modal" data-target="#gv_trong">
-                                                        <i>Xem thêm >>></i>
-                                                    </button>
+                                                        <figure>
+                                                            <img src="/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                        </figure>
+                                                        <p className="gv_name">
+                                                            Mr. Trọng Nguyễn
+                                                        </p>
+                                                        <p className="position">
+                                                            Media Manager at <wbr />
+                                                            Ureka Media
+                                                        </p>
+                                                        <button type="button" className="xemthem" data-toggle="modal" data-target="#gv_trong">
+                                                            <i>Xem thêm >>></i>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                        </Swiper>
                                     </div>
                                 </div>
                                 <Button type="button" className="btn_tuvan" data_toggle="modal" data_target="#form_tuvan">
                                     Nhận tư vấn miễn phí ngay
                                 </Button>
                             </div>
+                        );
+                }
+                return true;
+            })
+        })
+        return(
+            <section id="course_detail" >
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            {updatedCourseName}
                         </div>
                     </div>
                 </div>
