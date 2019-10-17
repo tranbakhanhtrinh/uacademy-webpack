@@ -6,8 +6,6 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import courses from './store/reducers/courses';
 import about from './store/reducers/about';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/jquery/dist/jquery';
 import 'popper.js';
 import 'bootstrap/dist/js/bootstrap';
 import './index.scss';

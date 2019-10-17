@@ -1,12 +1,6 @@
 @import '../../general_scss/general.scss';
 
-body{
-    // @include background(url("../assets/images/bg_blog.jpg"),no-repeat, cover, center);
-    background-image:url("../../assets/images/bg_blog.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 
 #blog{
     padding: 9rem 0 3rem;
@@ -33,9 +27,6 @@ body{
                 text-align: left;
                 font-family: $font_Bold;
                 margin-bottom: .5rem;
-                // white-space: nowrap;
-                // text-overflow: ellipsis;
-                // overflow: hidden;
                 & + p {
                     font-family: $font_Regular;
                 }

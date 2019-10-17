@@ -67,7 +67,7 @@ img {
     width: $width;
 }
 
-// Modal giảng viên
+
 .modal{
     z-index: 1050;
     .modal-dialog{
@@ -129,8 +129,6 @@ img {
                         .description_gv{
                             font-family: $font_Regular;
                             text-align: justify;
-                            // height: 260px;
-                            // overflow-y: scroll;
                             padding-right: 10px;
                         }
                     }
@@ -161,15 +159,13 @@ img {
         
     }
     &.fade{
-        .modal-dialog{
-            // @include transform(translate(0,100%));
+        .modal-dialog{            
             -webkit-transform: translate(0,25%);
             transform: translate(0,25%);
         }
     }
     &.show{
         .modal-dialog{
-            // @include transform(translate(0,100%));
             -webkit-transform: translate(0,0%);
             transform: translate(0,0%);
         }

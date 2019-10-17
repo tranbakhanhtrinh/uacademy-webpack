@@ -1,9 +1,6 @@
 @import '../../general_scss/general.scss';
 
-body{
-    @include background(url("../assets/images/bg.png"),no-repeat, cover, center);
-    // background-image:url("../../assets/images/bg.png");
-}
+
 
 #document{
     padding: 9rem 0 3rem;

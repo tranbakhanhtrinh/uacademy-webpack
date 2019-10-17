@@ -259,6 +259,7 @@ class Course extends Component {
                 }
                 return true;
             })
+            return true;
         })
         return(
             <section id="course_detail" >

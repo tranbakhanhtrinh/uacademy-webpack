@@ -1,12 +1,5 @@
 @import '../../../general_scss/general.scss';
 
-body{
-    // @include background(url("../assets/images/bg_course.jpg"),no-repeat, cover, center);
-    background-image:url("../../../assets/images/bg_course.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 #course_detail{
     padding: 9rem 0 3rem;

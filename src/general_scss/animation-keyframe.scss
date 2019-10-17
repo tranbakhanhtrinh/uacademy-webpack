@@ -69,13 +69,13 @@
         opacity: 1;
     }
 }
-/* Go from zero to full opacity */
+
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
 }
 
-// Shining text
+
 @-webkit-keyframes shine {
 	0%, 10% {
 		background-position: -1000px;
@@ -91,11 +91,7 @@
 	}
 }
 
-/**
- * ----------------------------------------
- * animation tracking-in-expand
- * ----------------------------------------
- */
+
 @-webkit-keyframes tracking-in-expand {
     0% {
       letter-spacing: -0.5em;
@@ -121,11 +117,7 @@
     }
 }
 
-/**
- * ----------------------------------------
- * animation heartbeat
- * ----------------------------------------
- */
+
  @-webkit-keyframes heartbeat {
     from {
       -webkit-transform: scale(1);
@@ -199,7 +191,7 @@
   100% {transform:translateX(200%);}
 }
 
-/* Bob */
+
 @-webkit-keyframes hvr-bob {
   0% {
     -webkit-transform: translateY(-8px);

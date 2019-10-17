@@ -13,7 +13,6 @@ import Document from './containers/Document/Document';
 import Contact from './containers/Contact/Contact';
 import BackToTop from './components/BackToTop/BackToTop';
 import './App.css';
-
 class App extends Component {
   backToTopHandler = (scrollDuration) => {
     // const scrollStep = -window.scrollY / (scrollDuration / 15),

@@ -1,12 +1,10 @@
 @import '../../general_scss/general.scss';
 
 .navbar-light{
-    // background-color:transparent;
     width: 100%;
     z-index: 999;
     padding: 0;
     .navbar-brand{
-        // padding: 0;
         figure{
             margin-bottom: 0;
             width: 80%;
@@ -75,7 +73,6 @@
 @media (max-width: 575.98px){
     .navbar-light{
         background-color: #fff;
-        // height: 65px;
         padding: .8rem 0;
         .navbar-brand{
             margin-right: auto;
