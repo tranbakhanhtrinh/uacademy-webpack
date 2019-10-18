@@ -11,7 +11,7 @@ const backToTop = props => {
     })
     return(
         <div className="btn_up" onClick={props.clicked}>
-            <img src="images/btn_up.png" alt="" className="img-fluid d-block" />
+            <img src="./assets/images/btn_up.png" alt="" className="img-fluid d-block" />
         </div>
     )
 }

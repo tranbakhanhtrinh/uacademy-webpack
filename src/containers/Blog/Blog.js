@@ -41,7 +41,7 @@ class Blog extends Component {
                                         <div className="row">
                                             <div className="col-md-4">
                                                 <figure>
-                                                    <img src="images/blog1.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/blog1.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8">
@@ -68,7 +68,7 @@ class Blog extends Component {
                                         <div className="row">
                                             <div className="col-md-4">
                                                 <figure>
-                                                    <img src="images/blog2.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/blog2.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8">
@@ -95,7 +95,7 @@ class Blog extends Component {
                                         <div className="row">
                                             <div className="col-md-4">
                                                 <figure>
-                                                    <img src="images/blog3.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/blog3.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8">
@@ -122,7 +122,7 @@ class Blog extends Component {
                                         <div className="row">
                                             <div className="col-md-4">
                                                 <figure>
-                                                    <img src="images/blog4.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/blog4.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8">
@@ -155,7 +155,7 @@ class Blog extends Component {
                                         <div className="row mt-20">
                                             <div className="col-md-4">
                                                 <figure> 
-                                                    <img src="images/tin1.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/tin1.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8 my-auto">
@@ -172,7 +172,7 @@ class Blog extends Component {
                                         <div className="row mt-20">
                                             <div className="col-md-4">
                                                 <figure> 
-                                                    <img src="images/tin2.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/tin2.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8 my-auto">
@@ -195,7 +195,7 @@ class Blog extends Component {
                                         <div className="row mt-20">
                                             <div className="col-md-4">
                                                 <figure> 
-                                                    <img src="images/tin1.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/tin1.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8 my-auto">
@@ -212,7 +212,7 @@ class Blog extends Component {
                                         <div className="row mt-20">
                                             <div className="col-md-4">
                                                 <figure> 
-                                                    <img src="images/tin2.jpg" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/tin2.jpg" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                             </div>
                                             <div className="col-md-8 my-auto">

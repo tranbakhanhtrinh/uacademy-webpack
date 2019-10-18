@@ -1,15 +1,33 @@
-@import '../../general_scss/general.scss';
-
-
-
+@font-face{
+    font-family: 'Regular';
+    src: url('../../assets/fonts/NunitoSans-Regular.ttf');
+}
+@font-face{
+    font-family: 'Bold';
+    src: url('../../assets/fonts/NunitoSans-Bold.ttf');
+}
+@mixin title($font-family,$text-transform,$font-size,$text-align,$color) {
+    font-family: $font-family;
+    text-transform: $text-transform;
+    font-size: $font-size;
+    text-align: $text-align;
+    color: $color;
+}
+@mixin border-radius($deg){
+    border-radius: $deg;
+    -webkit-border-radius: $deg;
+    -moz-border-radius: $deg;
+    -ms-border-radius: $deg;
+    -o-border-radius: $deg;
+}
 
 #course{
     padding: 9rem 0 3rem;
     p{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         text-align: center;
         &.title{
-            @include title($font_Bold, initial, 1.5rem, center, #000000);
+            @include title('Bold', initial, 1.5rem, center, #000000);
         }
     }
     .khoahoc{
@@ -22,12 +40,12 @@
         }
         .level_title{
             color: #37c8b9;
-            font-family: $font_Bold;
+            font-family: 'Bold';
             font-size: 1.2rem;
             text-align: center;
         }
         .old_price{
-            font-family: $font_Bold;
+            font-family: 'Bold';
             text-align: center;
             color: #ff5050;
             text-decoration: line-through;
@@ -39,7 +57,7 @@
             padding: 2px;
             @include border-radius(50px);
             .new_price{
-                font-family: $font_Bold;
+                font-family: 'Bold';
                 text-align: center;
                 font-size: 1.5rem;
                 background-color: #fff;

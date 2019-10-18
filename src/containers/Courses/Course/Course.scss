@@ -1,23 +1,38 @@
-@import '../../../general_scss/general.scss';
+@font-face{
+    font-family: 'Bold';
+    src: url('../../../assets/fonts/NunitoSans-Bold.ttf');
+}
+@font-face{
+    font-family: 'Regular';
+    src: url('../../../assets/fonts/NunitoSans-Regular.ttf');
+}
+
+@mixin border-radius($deg){
+    border-radius: $deg;
+    -webkit-border-radius: $deg;
+    -moz-border-radius: $deg;
+    -ms-border-radius: $deg;
+    -o-border-radius: $deg;
+}
 
 
 #course_detail{
     padding: 9rem 0 3rem;
     p{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         text-align: left;
         &.level_title{
             color: #37c8b9;
-            font-family: $font_Bold;
+            font-family: 'Bold';
             font-size: 1.1rem;
             text-align: left;
             text-transform: uppercase;
         }
         .thoiluong{
-            font-family: $font_Bold;
+            font-family: 'Bold';
         }
         &.sub_title{
-            font-family: $font_Bold;
+            font-family: 'Bold';
             font-size: 1rem;
             margin-bottom: 0;
         }
@@ -31,13 +46,13 @@
         @include border-radius(20px);
         legend{
             text-align: center;
-            font-family: $font_Bold;
+            font-family: 'Bold';
             font-size: 1rem;
             width: auto;
             padding: 0 10px;
         }
         .old_price{
-            font-family: $font_Bold;
+            font-family: 'Bold';
             text-align: center;
             color: #ff5050;
             text-decoration: line-through;
@@ -46,7 +61,7 @@
         }
         
         .new_price{
-            font-family: $font_Bold;
+            font-family: 'Bold';
             text-align: center;
             font-size: 1.5rem;
             background: linear-gradient(to right,#ff9d01 0, #ff630f 100%);
@@ -55,7 +70,7 @@
             color: #fff;
             .vnd{
                 color: #ff4c00;
-                font-family: $font_Bold;
+                font-family: 'Bold';
                 font-size: 1.2rem;
             }
         }
@@ -76,10 +91,10 @@
             .gach{
                 text-decoration: line-through;
                 color: #ff4d4d;
-                font-family: $font_Regular;
+                font-family: 'Regular';
             }
             .bold{
-                font-family: $font_Bold;
+                font-family: 'Bold';
             }
         }
         .gv{
@@ -96,12 +111,12 @@
             box-shadow: 0px 0px 100px -41px rgba(0,0,0,0.75);
             text-align: center;
             .gv_name{
-                font-family: $font_Bold;
+                font-family: 'Bold';
                 color: #fff;
                 text-align: center;
             }
             .position{
-                font-family: $font_Regular;
+                font-family: 'Regular';
                 color: #bfecf3;
                 text-align: center;
             }

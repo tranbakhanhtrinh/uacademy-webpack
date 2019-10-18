@@ -1,4 +1,15 @@
-@import '../../general_scss/general.scss';
+@font-face{
+    font-family: 'SemiBold';
+    src: url('../../assets/fonts/NunitoSans-SemiBold.ttf');
+}
+
+@mixin border-radius($deg){
+    border-radius: $deg;
+    -webkit-border-radius: $deg;
+    -moz-border-radius: $deg;
+    -ms-border-radius: $deg;
+    -o-border-radius: $deg;
+}
 
 .navbar-light{
     width: 100%;
@@ -14,7 +25,7 @@
         .navbar-nav{
             .nav-item{
                 .nav-link {
-                    font-family: $font_SemiBold;
+                    font-family: 'SemiBold';
                     padding: 1rem;
                     font-size: 0.9rem;
                     color: #000000;
@@ -30,7 +41,7 @@
             background: linear-gradient(to right, #2ac5b2 0%, #27bee0 100%);
             @include border-radius(100px);
             padding: 3px 10px;
-            font-family: $font_SemiBold;
+            font-family: 'SemiBold';
             color: #fff;
             a,a:hover{
                 text-decoration: none;

@@ -1,23 +1,49 @@
-@import '../../general_scss/general.scss';
-
-
+@font-face{
+    font-family: 'Bold';
+    src: url('../../assets/fonts/NunitoSans-Bold.ttf');
+}
+@font-face{
+    font-family: 'Regular';
+    src: url('../../assets/fonts/NunitoSans-Regular.ttf');
+}
+@mixin transition($value){
+    transition: $value;
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+}
+@mixin title($font-family,$text-transform,$font-size,$text-align,$color) {
+    font-family: $font-family;
+    text-transform: $text-transform;
+    font-size: $font-size;
+    text-align: $text-align;
+    color: $color;
+}
+@mixin border-radius($deg){
+    border-radius: $deg;
+    -webkit-border-radius: $deg;
+    -moz-border-radius: $deg;
+    -ms-border-radius: $deg;
+    -o-border-radius: $deg;
+}
 .aboutus{
     @include transition(zoom_text .5s ease-in);
 }
 header{
     padding: 9rem 0 3rem;
     .title{
-        @include title($font_Bold, initial, 3rem, left, #000000);
+        @include title('Bold', initial, 3rem, left, #000000);
     }
     p{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         color: #000000;
     }
     .header_form{
         margin-top: 2rem;
         width: 90%;
         p{
-            @include title($font_Bold, uppercase, 1.1rem, left, #2ac5b0);
+            @include title('Bold', uppercase, 1.1rem, left, #2ac5b0);
             margin-bottom: 0;
         }
     }
@@ -26,10 +52,10 @@ header{
 #class_img{
     padding: 3rem 0;
     .title{
-        @include title($font_Bold, initial, 3rem, right, #000000);
+        @include title('Bold', initial, 3rem, right, #000000);
     }
     p{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         color: #000000;
         text-align: right;
     }
@@ -103,10 +129,10 @@ header{
 #giangvien{
     padding: 3rem 0 6rem;
     .title{
-        @include title($font_Bold, initial, 3rem, left, #000000);
+        @include title('Bold', initial, 3rem, left, #000000);
     }
     p{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         color: #000000;
         text-align: left;
     }
@@ -120,12 +146,12 @@ header{
         box-shadow: 0px 0px 100px -41px rgba(0,0,0,0.75);
         text-align: center;
         .gv_name{
-            font-family: $font_Bold;
+            font-family: 'Bold';
             color: #fff;
             text-align: center;
         }
         .position{
-            font-family: $font_Regular;
+            font-family: 'Regular';
             color: #bfecf3;
             text-align: center;
         }

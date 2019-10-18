@@ -35,7 +35,7 @@ class Courses extends Component {
                     <div className="khoahoc">
                         <Link to={`${this.props.match.url}/${trimmedCourseName}`}>
                             <figure>
-                                <img src={`images/${arr.img}`} alt="" className="img-fluid mx-auto d-block" />
+                                <img src={`/assets/images/${arr.img}`} alt="" className="img-fluid mx-auto d-block" />
                             </figure>
                             <p className="level_title">
                                 {arr.courseName}

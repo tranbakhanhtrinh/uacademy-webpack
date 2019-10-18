@@ -109,7 +109,7 @@ class AboutUs extends Component {
             return(
                 <div key={index}>
                     <figure>
-                        <img src={`/images/${a}`} alt="" className="img-fluid d-block mx-auto" />
+                        <img src={`/assets/images/${a}`} alt="" className="img-fluid d-block mx-auto" />
                     </figure>
                 </div>
             )
@@ -134,7 +134,7 @@ class AboutUs extends Component {
                                             Nhận tư vấn khóa học miễn phí
                                         </p>
                                         <figure className="mr-0 ml-auto">
-                                            <img src="/images/may_bay_giay.png" alt="" className="img-fluid mx-auto d-block" />
+                                            <img src="/assets/images/may_bay_giay.png" alt="" className="img-fluid mx-auto d-block" />
                                         </figure>
                                     </div>
                                     {registerForm}
@@ -142,7 +142,7 @@ class AboutUs extends Component {
                             </div>
                             <div className="col-md-6 my-auto">
                                 <figure>
-                                    <img src={`/images/${abHeader.img}`} alt="" className="img-fluid mx-auto d-block" />
+                                    <img src={`/assets/images/${abHeader.img}`} alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
                         </div>
@@ -203,7 +203,7 @@ class AboutUs extends Component {
                                         <div className="col-md-4 my-auto">
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Hưng Võ
@@ -220,7 +220,7 @@ class AboutUs extends Component {
                                         <div className="col-md-4">
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Trọng Nguyễn
@@ -235,7 +235,7 @@ class AboutUs extends Component {
                                             </div>
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv3.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv3.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Nam Lê
@@ -252,7 +252,7 @@ class AboutUs extends Component {
                                         <div className="col-md-4 my-auto">
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv3.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv3.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Nam Lê
@@ -273,7 +273,7 @@ class AboutUs extends Component {
                                         <div>
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Hưng Võ
@@ -290,7 +290,7 @@ class AboutUs extends Component {
                                         <div>
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Trọng Nguyễn
@@ -307,7 +307,7 @@ class AboutUs extends Component {
                                         <div>
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Trọng Nguyễn
@@ -324,7 +324,7 @@ class AboutUs extends Component {
                                         <div>
                                             <div className="bg_gv">
                                                 <figure>
-                                                    <img src="/images/gv3.png" alt="" className="img-fluid d-block mx-auto" />
+                                                    <img src="/assets/images/gv3.png" alt="" className="img-fluid d-block mx-auto" />
                                                 </figure>
                                                 <p className="gv_name">
                                                     Mr. Nam Lê
@@ -354,15 +354,15 @@ class AboutUs extends Component {
                             <div className="modal-header">
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <figure className="close_pop bob">
-                                    <img src="/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
+                                    <img src="/assets/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
                             <div className="modal-body">
                                 <div className="row">
                                     <div className="col-md-5 col-sm-5 col-12 gv_left_img">
                                         <span className="helper"></span>
-                                        <img src="/images/quochung.png" alt="" className="img-fluid d-none  d-sm-none d-md-block" />
-                                        <img src="/images/quochung-mb.png" alt="" className="img-fluid d-block d-sm-block d-md-none" />
+                                        <img src="/assets/images/quochung.png" alt="" className="img-fluid d-none  d-sm-none d-md-block" />
+                                        <img src="/assets/images/quochung-mb.png" alt="" className="img-fluid d-block d-sm-block d-md-none" />
                                     </div>
                                     <div className="col-md-7 col-sm-7 col-12 gv_right_content">
                                         <div className="content">
@@ -391,15 +391,15 @@ class AboutUs extends Component {
                             <div className="modal-header">
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <figure className="close_pop bob">
-                                    <img src="/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
+                                    <img src="/assets/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
                             <div className="modal-body">
                                 <div className="row">
                                     <div className="col-md-5 col-sm-5 col-12 gv_left_img">
                                         <span className="helper"></span>
-                                        <img src="/images/Trong.png" alt="" className="img-fluid d-none  d-sm-none d-md-block" />
-                                        <img src="/images/trong-mb.png" alt="" className="img-fluid d-block d-sm-block d-md-none" />
+                                        <img src="/assets/images/Trong.png" alt="" className="img-fluid d-none  d-sm-none d-md-block" />
+                                        <img src="/assets/images/trong-mb.png" alt="" className="img-fluid d-block d-sm-block d-md-none" />
                                     </div>
                                     <div className="col-md-7 col-sm-7 col-12 gv_right_content">
                                         <div className="content">
@@ -425,7 +425,7 @@ class AboutUs extends Component {
                             <div className="modal-header">
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <figure className="close_pop bob">
-                                <img src="/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
+                                <img src="/assets/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
                             <div className="modal-body">
@@ -437,7 +437,7 @@ class AboutUs extends Component {
                                                     Nhận tư vấn khóa học miễn phí
                                                 </p>
                                                 <figure className="mr-0 ml-auto">
-                                                    <img src="/images/may_bay_giay.png" alt="" className="img-fluid mx-auto d-block" />
+                                                    <img src="/assets/images/may_bay_giay.png" alt="" className="img-fluid mx-auto d-block" />
                                                 </figure>
                                             </div>
                                             {registerForm}
@@ -456,7 +456,7 @@ class AboutUs extends Component {
                             <div className="modal-header">
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <figure className="close_pop bob">
-                                    <img src="/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
+                                    <img src="/assets/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
                             <div className="modal-body">
@@ -464,10 +464,10 @@ class AboutUs extends Component {
                             </div>
                             <div className="modal-footer">
                                 <a href="tel:+84899971919"> 
-                                    <img src="/images/phone_popup.png" alt="" className="img-fluid mx-auto"  width="50" />
+                                    <img src="/assets/images/phone_popup.png" alt="" className="img-fluid mx-auto"  width="50" />
                                 </a>
                                 <button data-dismiss="modal">
-                                    <img src="/images/close_popup.png" alt="" className="img-fluid mx-auto" width="50" />
+                                    <img src="/assets/images/close_popup.png" alt="" className="img-fluid mx-auto" width="50" />
                                 </button>
                             </div>
                         </div>

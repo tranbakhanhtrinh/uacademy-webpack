@@ -1,9 +1,20 @@
-@import '../../../general_scss/general.scss';
+@font-face{
+    font-family: 'Bold';
+    src: url('../../../assets/fonts/NunitoSans-Bold.ttf');
+}
+
+@mixin border-radius($deg){
+    border-radius: $deg;
+    -webkit-border-radius: $deg;
+    -moz-border-radius: $deg;
+    -ms-border-radius: $deg;
+    -o-border-radius: $deg;
+}
 
 .btn_register{
     display: table;
     width: fit-content;
-    font-family: $font_Bold;
+    font-family: 'Bold';
     color: #fff;
     font-size: 1.1rem;
     background: linear-gradient(to right, #2ac5b2 0%, #27bee0 100%);
@@ -20,7 +31,7 @@
 .btn_tuvan{
     display: table;
     width: fit-content;
-    font-family: $font_Bold;
+    font-family: 'Bold';
     color: #fff;
     font-size: 1.1rem;
     background: linear-gradient(to right, #2ac5b2 0%, #27bee0 100%);

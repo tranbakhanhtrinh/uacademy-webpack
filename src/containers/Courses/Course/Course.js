@@ -50,7 +50,7 @@ class Course extends Component {
                 return(
                     <div key={index}>
                         <figure>
-                            <img src={`/images/${a}`} alt="" className="img-fluid d-block mx-auto" />
+                            <img src={`/assets/images/${a}`} alt="" className="img-fluid d-block mx-auto" />
                         </figure>
                     </div>
                 )
@@ -63,7 +63,7 @@ class Course extends Component {
                                 <div className="row">
                                     <div className="col-md-3 ">
                                         <figure>
-                                            <img src={`/images/${c.img}`} alt="" className="img-fluid mx-auto d-block" />
+                                            <img src={`/assets/images/${c.img}`} alt="" className="img-fluid mx-auto d-block" />
                                         </figure>
                                     </div>
                                     <div className="col-md-4 bd_right">
@@ -146,7 +146,7 @@ class Course extends Component {
                                             <div className="row">
                                                 <div className="col-md-4">
                                                     <figure className="uudai_hinh">
-                                                        <img src={`/images/${c.uudai[0].img}`} alt="" className="img-fluid d-block mx-auto" />
+                                                        <img src={`/assets/images/${c.uudai[0].img}`} alt="" className="img-fluid d-block mx-auto" />
                                                     </figure>                    
                                                     <p className="uudai">
                                                         <span className="gach">Học phí: {c.uudai[0].oldPrice} / khóa</span> <br />
@@ -155,7 +155,7 @@ class Course extends Component {
                                                 </div>
                                                 <div className="col-md-4">
                                                     <figure className="uudai_hinh">
-                                                        <img src={`/images/${c.uudai[1].img}`} alt="" className="img-fluid d-block mx-auto" />
+                                                        <img src={`/assets/images/${c.uudai[1].img}`} alt="" className="img-fluid d-block mx-auto" />
                                                     </figure>                    
                                                     <p className="uudai">
                                                         <span className="bold">{c.uudai[1].bold}</span> <br />
@@ -164,7 +164,7 @@ class Course extends Component {
                                                 </div>
                                                 <div className="col-md-4">
                                                     <figure className="uudai_hinh">
-                                                        <img src={`/images/${c.uudai[2].img}`} alt="" className="img-fluid d-block mx-auto" />
+                                                        <img src={`/assets/images/${c.uudai[2].img}`} alt="" className="img-fluid d-block mx-auto" />
                                                     </figure>                    
                                                     <p className="uudai">
                                                         <span className="bold">{c.uudai[2].bold}</span> <br />
@@ -183,7 +183,7 @@ class Course extends Component {
                                     <div className="gv d-none d-sm-flex">
                                         <div className="bg_gv">
                                             <figure>
-                                                <img src="/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                <img src="/assets/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
                                             </figure>
                                             <p className="gv_name">
                                                 Mr. Trọng Nguyễn
@@ -198,7 +198,7 @@ class Course extends Component {
                                         </div>
                                         <div className="bg_gv">
                                             <figure>
-                                                <img src="/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
+                                                <img src="/assets/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
                                             </figure>
                                             <p className="gv_name">
                                                 Mr. Hưng Võ
@@ -217,7 +217,7 @@ class Course extends Component {
                                                 <div>
                                                     <div className="bg_gv">
                                                         <figure>
-                                                            <img src="/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
+                                                            <img src="/assets/images/gv1.png" alt="" className="img-fluid d-block mx-auto" />
                                                         </figure>
                                                         <p className="gv_name">
                                                             Mr. Hưng Võ
@@ -234,7 +234,7 @@ class Course extends Component {
                                                 <div>
                                                     <div className="bg_gv">
                                                         <figure>
-                                                            <img src="/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
+                                                            <img src="/assets/images/gv2.png" alt="" className="img-fluid d-block mx-auto" />
                                                         </figure>
                                                         <p className="gv_name">
                                                             Mr. Trọng Nguyễn

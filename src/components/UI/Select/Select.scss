@@ -1,4 +1,10 @@
-@import '../../../general_scss/general.scss';
+@mixin border-radius($deg){
+    border-radius: $deg;
+    -webkit-border-radius: $deg;
+    -moz-border-radius: $deg;
+    -ms-border-radius: $deg;
+    -o-border-radius: $deg;
+}
 
 .field_input{
     width: 100%;

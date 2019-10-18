@@ -1,9 +1,5 @@
 import React from 'react';
 
-import fb from '../../assets/images/fb.png';
-import youtube from '../../assets/images/youtube.png';
-import instagram from '../../assets/images/instagram.png';
-
 import './Footer.scss';
 
 const footer = () => (
@@ -15,21 +11,21 @@ const footer = () => (
               <li>
                 <a href="https://www.facebook.com/academy.ureka/" target="_blank" rel="noopener noreferrer">
                   <figure>
-                    <img src={fb} alt="" className="img-fluid d-block mx-auto" />
+                    <img src="/assets/images/fb.png" alt="" className="img-fluid d-block mx-auto" />
                   </figure>
                 </a>
               </li>
               <li>
                 <a href="https://www.facebook.com/academy.ureka/" target="_blank" rel="noopener noreferrer">
                   <figure>
-                    <img src={youtube} alt="" className="img-fluid d-block mx-auto" />
+                    <img src="/assets/images/youtube.png" alt="" className="img-fluid d-block mx-auto" />
                   </figure>
                 </a>
               </li>
               <li>
                 <a href="https://www.facebook.com/academy.ureka/" target="_blank" rel="noopener noreferrer">
                   <figure>
-                    <img src={instagram} alt="" className="img-fluid d-block mx-auto" />
+                    <img src="/assets/images/instagram.png" alt="" className="img-fluid d-block mx-auto" />
                   </figure>
                 </a>
               </li>

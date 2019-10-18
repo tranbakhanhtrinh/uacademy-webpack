@@ -20,7 +20,7 @@ const nav = () => {
         </button>
         <Link className="navbar-brand" to="/">
           <figure>
-            <img src='/images/logo.png' alt="" className="img-fluid mx-auto" />
+            <img src='/assets/images/logo.png' alt="" className="img-fluid mx-auto" />
           </figure>
         </Link>
         <div className="phone_serch_mb d-flex d-sm-flex d-md-none align-items-center">
@@ -31,7 +31,7 @@ const nav = () => {
           </div>
           <button className="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <figure>
-              <img src="/images/btn_search.png" alt="" className="img-fluid mx-auto d-block" />
+              <img src="/assets/images/btn_search.png" alt="" className="img-fluid mx-auto d-block" />
             </figure>
           </button>
           <div className="dropdown-menu">
@@ -48,7 +48,7 @@ const nav = () => {
                 </div>
                 <button className="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <figure>
-                    <img src="/images/btn_search.png" alt="" className="img-fluid mx-auto d-block" />
+                    <img src="/assets/images/btn_search.png" alt="" className="img-fluid mx-auto d-block" />
                 </figure>
                 </button>
                 <div className="dropdown-menu">

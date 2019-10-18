@@ -1,4 +1,7 @@
-@import '../../general_scss/general.scss';
+@font-face{
+    font-family: 'Regular';
+    src: url('../../assets/fonts/NunitoSans-Regular.ttf');
+}
 
 footer{
     padding: 3rem 0 3rem;
@@ -13,7 +16,7 @@ footer{
         }
     }
     p{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         text-align: center;
         color: #000000;
         margin-bottom: 0;

@@ -38,7 +38,7 @@ class Student extends Component {
                                     <div className="col-md-3">
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv1.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv1.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor
@@ -54,7 +54,7 @@ class Student extends Component {
                                     <div className="col-md-3">
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv2.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv2.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor
@@ -70,7 +70,7 @@ class Student extends Component {
                                     <div className="col-md-3">
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv3.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv3.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor
@@ -86,7 +86,7 @@ class Student extends Component {
                                     <div className="col-md-3">
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv4.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv4.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor
@@ -106,7 +106,7 @@ class Student extends Component {
                                     <div>
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv1.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv1.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor
@@ -122,7 +122,7 @@ class Student extends Component {
                                     <div>
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv2.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv2.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor
@@ -138,7 +138,7 @@ class Student extends Component {
                                     <div>
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv3.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv3.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor
@@ -154,7 +154,7 @@ class Student extends Component {
                                     <div>
                                         <div className="hocvien">
                                             <figure>
-                                                <img src="images/hv4.png" alt="" className="img-fluid mx-auto d-block" />
+                                                <img src="/assets/images/hv4.png" alt="" className="img-fluid mx-auto d-block" />
                                             </figure>
                                             <p className="hv_title">
                                                 Lorem ipsum dolor

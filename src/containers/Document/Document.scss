@@ -1,14 +1,45 @@
-@import '../../general_scss/general.scss';
+@font-face{
+    font-family: 'Bold';
+    src: url('../../assets/fonts/NunitoSans-Bold.ttf');
+}
+@font-face{
+    font-family: 'Regular';
+    src: url('../../assets/fonts/NunitoSans-Regular.ttf');
+}
+@font-face{
+    font-family: 'BoldItalic';
+    src: url('../../assets/fonts/NunitoSans-BoldItalic.ttf');
+}
 
-
+@mixin transition($value){
+    transition: $value;
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+}
+@mixin title($font-family,$text-transform,$font-size,$text-align,$color) {
+    font-family: $font-family;
+    text-transform: $text-transform;
+    font-size: $font-size;
+    text-align: $text-align;
+    color: $color;
+}
+@mixin border-radius($deg){
+    border-radius: $deg;
+    -webkit-border-radius: $deg;
+    -moz-border-radius: $deg;
+    -ms-border-radius: $deg;
+    -o-border-radius: $deg;
+}
 
 #document{
     padding: 9rem 0 3rem;
     p{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         text-align: center;
         &.title{
-            @include title($font_Bold, initial, 1.5rem, center, #000000);
+            @include title('Bold', initial, 1.5rem, center, #000000);
         }
     }
     .document{
@@ -25,14 +56,14 @@
             padding: 1rem 1rem  0 0;
             p{
                 text-align: left;
-                font-family: $font_Bold;
+                font-family: 'Bold';
                 margin-bottom: .5rem;
                 & + p {
-                    font-family: $font_Regular;
+                    font-family: 'Regular';
                 }
             }
             .btn_tuvan{
-                font-family: $font_Regular;
+                font-family: 'Regular';
                 font-size: 1rem;
                 padding: 5px 30px;
             }
@@ -44,10 +75,10 @@
         }
     }
     .author{
-        font-family: $font_Regular;
+        font-family: 'Regular';
         font-size: .8rem;
         span{
-            font-family: $font_BoldItalic;
+            font-family: 'BoldItalic';
         }
     }
     .news{
@@ -58,7 +89,7 @@
         -moz-box-shadow: 0px 0px 110px -70px rgba(0,0,0,0.75);
         box-shadow: 0px 0px 110px -70px rgba(0,0,0,0.75);
         .title{
-            font-family: $font_Bold;
+            font-family: 'Bold';
             width: fit-content;
             hr{
                 border: 2px solid #27bfdb; 
@@ -66,7 +97,7 @@
             }
         }
         p{
-            font-family: $font_Bold;
+            font-family: 'Bold';
             text-align: left;
         }
     }
@@ -87,7 +118,7 @@
             text-transform: uppercase;
             width: 70%;
             border-top-left-radius: 100px;
-            font-family: $font_Bold;
+            font-family: 'Bold';
             color: #fff;
             margin-left: auto;
             margin-right: 0;
