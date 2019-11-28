@@ -1,4 +1,6 @@
 export const GET_ABOUT = 'GET_ABOUT';
 
-export const GET_COURSES = 'GET_COURSES';
+export const GET_COURSES_START = 'GET_COURSES_START';
+export const GET_COURSES_SUCCESS = 'GET_COURSES_SUCCESS';
+export const GET_COURSES_FAIL = 'GET_COURSES_FAIL';
 export const GET_COURSE = 'GET_COURSE';

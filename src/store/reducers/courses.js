@@ -2,15 +2,32 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     courses: null,
-    course: null
+    course: null,
+    loading: false
 }
 
-const getCourses = (state,action) => {
-    return{
+const getCourseStart = (state,action) => {
+    return {
         ...state,
-        courses:action.courses
+        loading: true
     }
 }
+
+const getCoursesSuccess = (state,action) => {
+    return{
+        ...state,
+        courses:action.courses,
+        loading : false
+    }
+}
+
+const getCourseFail = (state,action) => {
+    return {
+        ...state,
+        loading: false
+    }
+}
+
 const getCourse = (state,action) => {
     return{
         ...state,
@@ -20,7 +37,9 @@ const getCourse = (state,action) => {
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
-        case(actionTypes.GET_COURSES): return getCourses(state,action)
+        case(actionTypes.GET_COURSES_START): return getCourseStart(state,action)
+        case(actionTypes.GET_COURSES_SUCCESS): return getCoursesSuccess(state,action)
+        case(actionTypes.GET_COURSES_FAIL): return getCourseFail(state,action)
         case(actionTypes.GET_COURSE): return getCourse(state,action)
         default: return state
     }

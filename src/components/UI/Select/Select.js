@@ -10,6 +10,6 @@ const options= [
 ]
 
 const select = props => (
-    <Select className="field_input" classNamePrefix="field_input" placeholder={props.placeholder} options={options} />
+    <Select className="field_input" classNamePrefix="field_input" placeholder={props.placeholder} options={options} onChange={props.changed} />
 )
 export default select;

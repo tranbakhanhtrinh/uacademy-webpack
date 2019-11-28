@@ -39,6 +39,9 @@ class AboutUs extends Component {
                 },
                 value: ''
             },
+            select: {
+                value: ''
+            }
         }
     }
 
@@ -56,32 +59,42 @@ class AboutUs extends Component {
         this.setState({form: updatedForm})
     }
 
+    selectChangedHandler = (val) => {
+        
+        // console.log(val.value)
+    }
+
+    submitDataForm = () => {
+        console.log(this.state.form.select.value)
+        // const form = {...this.state.form}
+    }
+
     render(){
         let registerForm = (
             <form>
-                <Select placeholder='Chọn khoá học'/>
+                <Select placeholder='Chọn khoá học' changed={this.selectChangedHandler} />
                 <Input  elementType={this.state.form.fullname.elementType} 
                         elementConfig = {this.state.form.fullname.elementConfig}
                         value={this.state.form.fullname.value}  
-                        changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[1])}
+                        changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[0])}
                 />
                 <div className="row">
                   <div className="col-md-6">
                     <Input  elementType={this.state.form.email.elementType} 
                             elementConfig = {this.state.form.email.elementConfig}
                             value={this.state.form.email.value}  
-                            changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[2])}
+                            changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[1])}
                     />
                   </div>
                   <div className="col-md-6">
                     <Input  elementType={this.state.form.phone.elementType} 
                             elementConfig = {this.state.form.phone.elementConfig}
                             value={this.state.form.phone.value}  
-                            changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[3])}
+                            changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[2])}
                     />
                   </div>
                 </div>
-                <Button type='button' className="btn_register">Nhận khoá học</Button>
+                <Button clicked={this.submitDataForm} type='button' className="btn_register">Nhận khoá học</Button>
             </form>
         );
         

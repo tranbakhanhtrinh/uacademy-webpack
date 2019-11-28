@@ -2,6 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HWP = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -10,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        chunkFilename: '[id].js',
+        chunkFilename: '[id].chunk.js',
         publicPath: '/'
     },
     resolve: {
@@ -82,5 +83,10 @@ module.exports = {
         new CopyWebpackPlugin([
             {from:'./src/assets/images',to:'assets/images'}
         ])
-    ]
+    ],
+     optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
 }
