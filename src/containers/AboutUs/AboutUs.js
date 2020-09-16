@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
 import { connect } from "react-redux";
+import axios from '../../axios';
 
 import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
@@ -15,111 +16,119 @@ class AboutUs extends Component {
             fullname: {
                 elementType: 'input',
                 elementConfig: {
-                    type:'text',
+                    type: 'text',
                     placeholder: 'Họ và tên',
-                    name: 'fullname'    
+                    name: 'fullname'
                 },
                 value: ''
             },
-            email:{
+            email: {
                 elementType: 'input',
                 elementConfig: {
-                    type:'text',
+                    type: 'text',
                     placeholder: 'Email',
-                    name: 'email'    
+                    name: 'email'
                 },
                 value: ''
             },
-            phone:{
+            phone: {
                 elementType: 'input',
                 elementConfig: {
-                    type:'text',
+                    type: 'text',
                     placeholder: 'Số điện thoại',
-                    name: 'phone'    
+                    name: 'phone'
                 },
                 value: ''
             },
             select: {
-                value: ''
+                value: '',
+                label: ''
             }
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         // this.props.onFetchHeader(this.props.header);
         // this.props.onFetchHinhAnhLopHoc(this.props.hinhanhlophoc);
-        this.props.onFetchAbout(this.props.header,this.props.hinhanhlophoc,this.props.giangvien)
+        this.props.onFetchAbout(this.props.header, this.props.hinhanhlophoc, this.props.giangvien)
     }
 
-    inputChangedHandler = (event,inputIdentifier) => {
-        const updatedForm = {...this.state.form}
-        const updatedFormElement = {...updatedForm[inputIdentifier]}
+    inputChangedHandler = (event, inputIdentifier) => {
+        const updatedForm = { ...this.state.form }
+        const updatedFormElement = { ...updatedForm[inputIdentifier] }
         updatedFormElement.value = event.target.value;
         updatedForm[inputIdentifier] = updatedFormElement;
-        this.setState({form: updatedForm})
+        this.setState({ form: updatedForm })
     }
 
     selectChangedHandler = (val) => {
-        
-        // console.log(val.value)
+        const selectState = { ...this.state.form };
+        selectState.select = val;
+        // console.log(selectState.select);
+        this.setState({ form: selectState });
     }
 
     submitDataForm = () => {
-        console.log(this.state.form.select.value)
-        // const form = {...this.state.form}
+        const result = {};
+        for (let formElement in this.state.form) {
+            result[formElement] = this.state.form[formElement].value;
+        }
+        axios.post('/leads.json', result).then(res => {
+            this.props.history.replace("/thanks");
+        }).catch(err => console.log(err));
     }
 
-    render(){
+    render() {
         let registerForm = (
             <form>
                 <Select placeholder='Chọn khoá học' changed={this.selectChangedHandler} />
-                <Input  elementType={this.state.form.fullname.elementType} 
-                        elementConfig = {this.state.form.fullname.elementConfig}
-                        value={this.state.form.fullname.value}  
-                        changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[0])}
+                <Input elementType={this.state.form.fullname.elementType}
+                    elementConfig={this.state.form.fullname.elementConfig}
+                    value={this.state.form.fullname.value}
+                    changed={(event) => this.inputChangedHandler(event, Object.keys(this.state.form)[0])}
                 />
                 <div className="row">
-                  <div className="col-md-6">
-                    <Input  elementType={this.state.form.email.elementType} 
-                            elementConfig = {this.state.form.email.elementConfig}
-                            value={this.state.form.email.value}  
-                            changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[1])}
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <Input  elementType={this.state.form.phone.elementType} 
-                            elementConfig = {this.state.form.phone.elementConfig}
-                            value={this.state.form.phone.value}  
-                            changed={(event) =>this.inputChangedHandler(event,Object.keys(this.state.form)[2])}
-                    />
-                  </div>
+                    <div className="col-md-6">
+                        <Input elementType={this.state.form.email.elementType}
+                            elementConfig={this.state.form.email.elementConfig}
+                            value={this.state.form.email.value}
+                            changed={(event) => this.inputChangedHandler(event, Object.keys(this.state.form)[1])}
+                        />
+                    </div>
+                    <div className="col-md-6">
+                        <Input elementType={this.state.form.phone.elementType}
+                            elementConfig={this.state.form.phone.elementConfig}
+                            value={this.state.form.phone.value}
+                            changed={(event) => this.inputChangedHandler(event, Object.keys(this.state.form)[2])}
+                        />
+                    </div>
                 </div>
                 <Button clicked={this.submitDataForm} type='button' className="btn_register">Nhận khoá học</Button>
             </form>
         );
-        
+
         const params = {
             navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev'
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
             },
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
             },
-            loop:true,
+            loop: true,
             spaceBetween: 30,
         }
 
-        const {abHeader,abHinhAnhLopHoc,abGiangVien} = {
-            abHeader:{...this.props.header},
-            abHinhAnhLopHoc: {...this.props.hinhanhlophoc},
-            abGiangVien: {...this.props.giangvien}
+        const { abHeader, abHinhAnhLopHoc, abGiangVien } = {
+            abHeader: { ...this.props.header },
+            abHinhAnhLopHoc: { ...this.props.hinhanhlophoc },
+            abGiangVien: { ...this.props.giangvien }
         }
 
-        const img = Object.values({...abHinhAnhLopHoc.img});
-        const updatedImg = img.map( (a,index) => {
-            return(
+        const img = Object.values({ ...abHinhAnhLopHoc.img });
+        const updatedImg = img.map((a, index) => {
+            return (
                 <div key={index}>
                     <figure>
                         <img src={`/assets/images/${a}`} alt="" className="img-fluid d-block mx-auto" />
@@ -129,7 +138,7 @@ class AboutUs extends Component {
         })
 
 
-        return(
+        return (
             <div className="aboutus">
                 <header id="header">
                     <div className="container">
@@ -177,20 +186,20 @@ class AboutUs extends Component {
                                 </div>
                             </div>
                             <div className="col-md-7">
-                                {img.length > 0 ? 
+                                {img.length > 0 ?
                                     <Swiper {...params}>
-                                        {updatedImg}        
+                                        {updatedImg}
                                     </Swiper> : null
                                 }
                             </div>
                             <div className="col-md-5 my-auto">
                                 <div className="d-none d-sm-block">
-                                <p className="title">
-                                    {abHinhAnhLopHoc.title}
-                                </p>
-                                <p>
-                                    {abHinhAnhLopHoc.des}
-                                </p>
+                                    <p className="title">
+                                        {abHinhAnhLopHoc.title}
+                                    </p>
+                                    <p>
+                                        {abHinhAnhLopHoc.des}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -384,10 +393,10 @@ class AboutUs extends Component {
                                             <p className="position">HEAD OF MARCOM</p>
                                             <p className="company">at Ureka Media</p>
                                             <p className="description_gv">
-                                                Phụ trách hoạt động marketing, internal communication & external communication cho Ureka Media. Anh tham gia ngành Truyền thông Quảng cáo 
-                                                từ năm 2008 tại agency, đã có cơ hội làm việc với các nhãn hàng như: Dutch Lady, Bia 333 chai - Beer Saigon, Nagaworld Resort Cambodia, 
-                                                Resort World Sentosa, VinPearl Land, OPV, ... Bắt đầu tiếp cận tiếp thị trực tuyến từ 2012 và làm việc tại Ureka Media từ 2015, 
-                                                hiện tại ngoài bằng cử nhân CNTT & chứng chỉ Chuyên viên Quảng cáo Tiếp thị Tích hợp (IMC); thì anh còn có nhiều chứng chỉ trực tuyến 
+                                                Phụ trách hoạt động marketing, internal communication & external communication cho Ureka Media. Anh tham gia ngành Truyền thông Quảng cáo
+                                                từ năm 2008 tại agency, đã có cơ hội làm việc với các nhãn hàng như: Dutch Lady, Bia 333 chai - Beer Saigon, Nagaworld Resort Cambodia,
+                                                Resort World Sentosa, VinPearl Land, OPV, ... Bắt đầu tiếp cận tiếp thị trực tuyến từ 2012 và làm việc tại Ureka Media từ 2015,
+                                                hiện tại ngoài bằng cử nhân CNTT & chứng chỉ Chuyên viên Quảng cáo Tiếp thị Tích hợp (IMC); thì anh còn có nhiều chứng chỉ trực tuyến
                                                 được cấp bởi AppNexus (Microsoft), Google, Facebook.
                                             </p>
                                         </div>
@@ -438,7 +447,7 @@ class AboutUs extends Component {
                             <div className="modal-header">
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <figure className="close_pop bob">
-                                <img src="/assets/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
+                                    <img src="/assets/images/arrow_up.png" alt="" className="img-fluid mx-auto d-block" />
                                 </figure>
                             </div>
                             <div className="modal-body">
@@ -454,8 +463,8 @@ class AboutUs extends Component {
                                                 </figure>
                                             </div>
                                             {registerForm}
-                                        </div> 
-                                    </div>                  
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -476,8 +485,8 @@ class AboutUs extends Component {
                                 BẠN CÓ MUỐN THỰC HIỆN CUỘC GỌI ?
                             </div>
                             <div className="modal-footer">
-                                <a href="tel:+84899971919"> 
-                                    <img src="/assets/images/phone_popup.png" alt="" className="img-fluid mx-auto"  width="50" />
+                                <a href="tel:+84899971919">
+                                    <img src="/assets/images/phone_popup.png" alt="" className="img-fluid mx-auto" width="50" />
                                 </a>
                                 <button data-dismiss="modal">
                                     <img src="/assets/images/close_popup.png" alt="" className="img-fluid mx-auto" width="50" />
@@ -500,9 +509,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    return {    
-        onFetchAbout: (header, hinhanh, gv) => dispatch(actionTypes.fetchAbout(header, hinhanh,gv)),
+    return {
+        onFetchAbout: (header, hinhanh, gv) => dispatch(actionTypes.fetchAbout(header, hinhanh, gv)),
     }
 }
- 
-export default connect(mapStateToProps,mapDispatchToProps)(AboutUs);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutUs);
